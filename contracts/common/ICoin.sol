@@ -3,13 +3,7 @@
 pragma solidity ^0.8.17;
 
 interface ICoin {
-    /**
-     * Mint, makes new coins
-     */
-    function mint(uint256 amount) external returns (bool);
+    function mint(uint256 amount) external;
 
-    /**
-     * Pay, use coins
-     */
-    function pay(uint256 amount) external returns (bool);
+    function pay(uint256 amount) external;
 }
