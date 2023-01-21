@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "contracts/common/ICoin.sol";
 
-contract Coint is ERC20, Ownable, ICoin {
+contract Coin is ERC20, Ownable, ICoin {
     bool private saveCoin;
 
     address[] private _payers;

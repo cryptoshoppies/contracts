@@ -878,11 +878,11 @@
 			]
 		},
 		"contracts/common/ICoin.sol": {
-			"keccak256": "0xb69b291fb137d87939ad1c3f422efe2a87dda36614b051bee338d08753a2233d",
+			"keccak256": "0x57148e3aad160e8620c49165b8ae9be60d71ae8f57f9a14f198a38f8da370a5a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5b90e2455d0dd73dde6d9e73dea0d424ab8eaa953a854ce76abc9a7b290298f8",
-				"dweb:/ipfs/QmQiHr25iYR3pDDaDfXT4trLqCSHMdipVCeZDfq5QJjDCW"
+				"bzz-raw://cbd1fab22a2349aa5a59b7e7da44db5de6371e0fd96260c73a94db0fc37e260b",
+				"dweb:/ipfs/QmYkheZQpG1H3zyT9ftoKJhAJ8WoK7MCkFSuHveg9pz449"
 			]
 		},
 		"contracts/nfts/NFT.sol": {
