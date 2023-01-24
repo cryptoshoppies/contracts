@@ -42,7 +42,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     string private _baseURL;
     string private _baseExtension = ".json";
 
-    constructor() ERC2771Recipient() ERC721("ATBToken", "ATBT") {}
+    constructor() ERC2771Recipient() ERC721("ShoToken", "STKN") {}
 
     // цей метод має викликатись сервером для створення НФТ при скануванні QR- коду.
     /// @param _genes гени токену з картки
