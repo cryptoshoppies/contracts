@@ -236,6 +236,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "payer",
+						"type": "address"
+					}
+				],
+				"name": "isPayerExist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
@@ -524,11 +543,11 @@
 			]
 		},
 		"contracts/coins/Coin.sol": {
-			"keccak256": "0x2b278527a0edf6188d4c0b07a1d3595d2747884ba9e154871a0b0b02d6008af6",
+			"keccak256": "0x9a6aa955e1f8780faaabddbb8046021e4a2602298c5ae6659bf951fe6ca5511c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://74b671b9eb002635b2ee4b250419a4e85c95ebe316cb4b350c6cf5ef5d9472bc",
-				"dweb:/ipfs/QmPTCy39yi9NuWQ9AQAMHmkn3PqTNYDK9r2K9rJ2cUqEF3"
+				"bzz-raw://066a4ece1be75f075541c5269bbbe8e98807f32c8c31c4739d15151c8a123b9f",
+				"dweb:/ipfs/QmZ7h6u2b3bzXhmuauL2451EeRcbqW6uVbaLkChRMfsU7v"
 			]
 		},
 		"contracts/common/ICoin.sol": {

@@ -54,4 +54,12 @@ contract Coin is ERC20, Ownable, ICoin {
     function getPayers() external view returns (address[] memory) {
         return _payers;
     }
+
+    // return true - address exist / false - not exist
+    function isPayerExist(address payer) external view returns (bool) {
+        for (uint256 i = 0; i < _payers.length; i++) {
+            if (payer == _payers[i]) return true;
+        }
+        return false;
+    }
 }

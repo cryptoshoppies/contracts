@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@opengsn/contracts/src/interfaces/IERC2771Recipient.sol";
 import "@opengsn/contracts/src/ERC2771Recipient.sol";
 import "contracts/common/Counters.sol";
-import "contracts/common/ICoin.sol";
 import "contracts/common/IBreeding.sol";
 import "contracts/common/GenesUtil.sol";
 

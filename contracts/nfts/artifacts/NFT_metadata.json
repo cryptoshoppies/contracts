@@ -874,20 +874,12 @@
 				"dweb:/ipfs/QmQ8LWt9HAFthPwyW1fRqn1bsUeN8b5hVs7WnNuH3Uo1p5"
 			]
 		},
-		"contracts/common/ICoin.sol": {
-			"keccak256": "0x097ce4b025a714c09a69a8423e513632446f5f6b89146b1a86742e7920f3940e",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://32bdf7a8973b72f62b82da789e50e9b2be37a0e9c612c7de6419e33a6ba40653",
-				"dweb:/ipfs/QmafKf8Es3DTskAoKW2HGke41yS3bkjFPpG9r771QXns34"
-			]
-		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0xb4b218f49543fc800a1102d9a8945d264a90cfef7aafd1d00a71538150071678",
+			"keccak256": "0xab630ab393477bc7bcfd80317da8a005669b74c1fa8180f998507050fd461b47",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cd44b6e1bf770b7f2274a40113ee307f9b2cb5b741ec643740d825c053f3a25c",
-				"dweb:/ipfs/QmXNXpChA9qV99ecoB8cugUSh7ELpaynnvfgnKYZ35PHaG"
+				"bzz-raw://478d0daf5db95e5d19d3246f999934857f63044bb41863c03af5db06388cbf81",
+				"dweb:/ipfs/QmY9sBaKvE7jRZWXqaawHu24kzo5TKMyKNBJBXXbymiGfM"
 			]
 		}
 	},
