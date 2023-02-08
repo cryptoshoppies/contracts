@@ -208,7 +208,7 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "_newTokenId",
+						"name": "newTokenId",
 						"type": "uint256"
 					}
 				],
@@ -875,11 +875,11 @@
 			]
 		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0xab630ab393477bc7bcfd80317da8a005669b74c1fa8180f998507050fd461b47",
+			"keccak256": "0x38ea1d09ae73783ac5d575d5cd066d14e721bd6ef2644495da7618db236fc1dc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://478d0daf5db95e5d19d3246f999934857f63044bb41863c03af5db06388cbf81",
-				"dweb:/ipfs/QmY9sBaKvE7jRZWXqaawHu24kzo5TKMyKNBJBXXbymiGfM"
+				"bzz-raw://4eec94983afb714595634bea625ecc09925d55c0352a3b844d49d4282ad6e51a",
+				"dweb:/ipfs/Qmetj6Sj7WqhE3GZedmCRcQi2v7ado7G2oscLH1Wf6rdxe"
 			]
 		}
 	},

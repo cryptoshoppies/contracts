@@ -55,7 +55,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     function breeding(uint256 token1, uint256 token2)
         external
         onlyOwner
-        returns (uint256 _newTokenId)
+        returns (uint256 newTokenId)
     {
         require(_exists(token1), "query for nonexistent token");
         require(_exists(token2), "query for nonexistent token");
@@ -80,7 +80,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             dad.genes
         );
 
-        _newTokenId = createToken(token1, token2, newGenes);
+        newTokenId = createToken(token1, token2, newGenes);
 
         mom.genes = GenesUtil.setCharges(
             mom.genes,
@@ -91,7 +91,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             GenesUtil.getCharges(dad.genes) - _breedingPrice
         );
 
-        return _newTokenId;
+        return newTokenId;
     }
 
     // charge NFT (we have to be a payer)
