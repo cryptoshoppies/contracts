@@ -1,0 +1,145 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "genes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCharges",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGeneration",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGenes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "value",
+						"type": "uint8"
+					}
+				],
+				"name": "setCharges",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "setGeneration",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "setGenes",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/tests/TestGenes.sol": "TestGenes"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/common/GenesUtil.sol": {
+			"keccak256": "0xe8e79faea15a34f44a6bba1dae82d1e801250eaa871e4310e14327460f7b46a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13d966fb8169cb20ff198ebcf5c5b7488f3d17c205e600d8f5d5886aa37c2add",
+				"dweb:/ipfs/QmfJZbqv4CNqhabYiV1mEGMT519NKMseE12Uu1mfV9dWXW"
+			]
+		},
+		"contracts/tests/TestGenes.sol": {
+			"keccak256": "0xfef098926f30b5ae8bd2497d4b5d5780f0c55fdd9b749a562bc88a6ad0f5559f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2375a5fb4a2e913f5704c9af230a033a121725fd9da97f2b3128a578b1508133",
+				"dweb:/ipfs/QmVfJkXYrkTyYeY9m7JVmy68U4T62xk1jjFpSb9aLWmhSq"
+			]
+		}
+	},
+	"version": 1
+}

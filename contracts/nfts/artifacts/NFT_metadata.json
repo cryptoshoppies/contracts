@@ -71,9 +71,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint8",
-						"name": "charge",
-						"type": "uint8"
+						"internalType": "uint256",
+						"name": "genes",
+						"type": "uint256"
 					}
 				],
 				"name": "Charged",
@@ -149,82 +149,10 @@
 						"internalType": "uint256",
 						"name": "genes",
 						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint8",
-						"name": "charge",
-						"type": "uint8"
 					}
 				],
 				"name": "WasBorn",
 				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "token1",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "token2",
-						"type": "uint256"
-					}
-				],
-				"name": "Breeding",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "_newTokenId",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "value",
-						"type": "uint8"
-					}
-				],
-				"name": "Charge",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "_charge",
-						"type": "uint8"
-					}
-				],
-				"name": "Mint",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			},
 			{
 				"inputs": [
@@ -261,6 +189,48 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "token1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "token2",
+						"type": "uint256"
+					}
+				],
+				"name": "breeding",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newTokenId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "value",
+						"type": "uint8"
+					}
+				],
+				"name": "charge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -349,6 +319,25 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "genes",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -515,24 +504,11 @@
 				"inputs": [
 					{
 						"internalType": "uint8",
-						"name": "breedingPrice",
+						"name": "price",
 						"type": "uint8"
 					}
 				],
 				"name": "setBreedingPrice",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "coinContract",
-						"type": "address"
-					}
-				],
-				"name": "setCoinContract",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -672,12 +648,6 @@
 			},
 			"kind": "dev",
 			"methods": {
-				"Mint(uint256,uint8)": {
-					"params": {
-						"_charge": "заряд токена для 0 генерації",
-						"_genes": "гени токену з картки"
-					}
-				},
 				"approve(address,uint256)": {
 					"details": "See {IERC721-approve}."
 				},
@@ -701,6 +671,11 @@
 					},
 					"returns": {
 						"_0": "isTrustedForwarder `true` if the Forwarder is trusted to forward relayed transactions by this Recipient."
+					}
+				},
+				"mint(uint256)": {
+					"params": {
+						"genes": "- genes, generation and charge"
 					}
 				},
 				"name()": {
@@ -745,9 +720,6 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"Breeding(uint256,uint256)": {
-					"notice": "Створення нового покоління токену."
-				},
 				"getTrustedForwarder()": {
 					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder.Method is not a required method to allow Recipients to trust multiple Forwarders. Not recommended yet."
 				},
@@ -886,6 +858,14 @@
 				"dweb:/ipfs/QmPej4PxjPccqq93Qavjt1U6nR2LpQoSutuqTZt9g6NQEb"
 			]
 		},
+		"contracts/common/GenesUtil.sol": {
+			"keccak256": "0xe8e79faea15a34f44a6bba1dae82d1e801250eaa871e4310e14327460f7b46a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13d966fb8169cb20ff198ebcf5c5b7488f3d17c205e600d8f5d5886aa37c2add",
+				"dweb:/ipfs/QmfJZbqv4CNqhabYiV1mEGMT519NKMseE12Uu1mfV9dWXW"
+			]
+		},
 		"contracts/common/IBreeding.sol": {
 			"keccak256": "0xf2b910b50f2c3808d42738834bc0ce2eaabfa6fe925f6eb5e624d09e4d7d5a20",
 			"license": "MIT",
@@ -903,11 +883,11 @@
 			]
 		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0x8267aa750e1c624b2cd0cab870c5ecb55acf7afbb676824810c90354daab7fe5",
+			"keccak256": "0xb4b218f49543fc800a1102d9a8945d264a90cfef7aafd1d00a71538150071678",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://28a0fbd1f25bbda787ebb5502110cb283b692af1a62c6b35c81518523eb30aef",
-				"dweb:/ipfs/QmajpWg8vpxznrhn7XA7KB6BKAu2e22r7wPvWy7nsKrouu"
+				"bzz-raw://cd44b6e1bf770b7f2274a40113ee307f9b2cb5b741ec643740d825c053f3a25c",
+				"dweb:/ipfs/QmXNXpChA9qV99ecoB8cugUSh7ELpaynnvfgnKYZ35PHaG"
 			]
 		}
 	},

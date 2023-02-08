@@ -1,0 +1,81 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "genes1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genes2",
+						"type": "uint256"
+					}
+				],
+				"name": "breading",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"breading(uint256,uint256)": {
+					"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
+					"params": {
+						"genes1": "genes of mom",
+						"genes2": "genes of dad"
+					},
+					"returns": {
+						"_0": "the genes that are supposed to be passed down the child"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/common/IBody.sol": "IBod"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/common/IBody.sol": {
+			"keccak256": "0x3fe654ae61e2bd0c11753bd078fcd32335002dc6105c778b757cdc72a9494249",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e79be6660e56b4b9721aeb24389cc709ff6aa2bd8e1bf654976a64dec974bce",
+				"dweb:/ipfs/Qmbt93N5pC32cX6WEh2quCiX1qYn1ACZcSscqTx5oaEaxj"
+			]
+		}
+	},
+	"version": 1
+}

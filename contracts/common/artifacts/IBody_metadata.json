@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "charges",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "generation",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/common/IBody.sol": "IBody"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/common/IBody.sol": {
+			"keccak256": "0x624aaba174acee9ca604eadea678b951b7b6cab40d90ef841ee041a58a4ffd0a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://00553b11406cdf0e2eed071256fbebf374b7cef2f6ef56d8f6c65e49fb126026",
+				"dweb:/ipfs/QmTABDJBZU2xuM9FMy7vpAVKAqFVGpTH6fi84fa7rpB9bm"
+			]
+		}
+	},
+	"version": 1
+}
