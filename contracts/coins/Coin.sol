@@ -7,47 +7,50 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "contracts/common/ICoin.sol";
 
 contract Coin is ERC20, Ownable, ICoin {
-    bool private saveCoin;
-
     address[] private _payers;
 
+    // we have to check sender's ability to mint or burn coins
     modifier onlyPayer() {
-        address _payer = address(0);
-
-        bool flag = false;
+        bool found = false;
 
         for (uint256 i = 0; i < _payers.length; i++)
             if (_payers[i] == msg.sender) {
-                flag = true;
+                found = true;
+                break;
             }
 
-        require(
-            flag,
-            "onlyTokenContract"
-            "Ownable: caller is not the payer"
-        );
+        require(found, "msg.sender is not the payer");
         _;
     }
 
-    constructor() ERC20("ShoCoin", "SC") {}
+    constructor() ERC20("ShoCoin", "SHOC") {
+        // we have to add owner address to payer's list
+        _payers.push(owner());
+    }
 
+    // mint coins
     function mint(uint256 amount) external onlyOwner {
         _mint(owner(), amount);
     }
 
+    // burn coins
     function pay(uint256 amount) external onlyPayer {
         _burn(owner(), amount);
     }
 
+    // it adds ability to mint or burn coins
     function addPayer(address payer) external onlyOwner {
         _payers.push(payer);
     }
 
+    // it removes ability to mint or burn coins
     function removePayer(address payer) external onlyOwner {
-        for (uint256 i = 0; i < _payers.length; i++)
+        for (uint256 i = 0; i < _payers.length; i++) {
             if (payer == _payers[i]) delete _payers[i];
+        }
     }
 
+    // return list of payers who can mint or burn coins
     function getPayers() external view returns (address[] memory) {
         return _payers;
     }

@@ -3,7 +3,9 @@
 pragma solidity ^0.8.17;
 
 interface ICoin {
+    /// mint coins
     function mint(uint256 amount) external;
 
+    /// burn coins
     function pay(uint256 amount) external;
 }

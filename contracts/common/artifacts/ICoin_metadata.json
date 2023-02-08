@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -39,7 +39,14 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"mint(uint256)": {
+					"notice": "mint coins"
+				},
+				"pay(uint256)": {
+					"notice": "burn coins"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -47,7 +54,7 @@
 		"compilationTarget": {
 			"contracts/common/ICoin.sol": "ICoin"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -60,11 +67,11 @@
 	},
 	"sources": {
 		"contracts/common/ICoin.sol": {
-			"keccak256": "0x57148e3aad160e8620c49165b8ae9be60d71ae8f57f9a14f198a38f8da370a5a",
+			"keccak256": "0x097ce4b025a714c09a69a8423e513632446f5f6b89146b1a86742e7920f3940e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cbd1fab22a2349aa5a59b7e7da44db5de6371e0fd96260c73a94db0fc37e260b",
-				"dweb:/ipfs/QmYkheZQpG1H3zyT9ftoKJhAJ8WoK7MCkFSuHveg9pz449"
+				"bzz-raw://32bdf7a8973b72f62b82da789e50e9b2be37a0e9c612c7de6419e33a6ba40653",
+				"dweb:/ipfs/QmafKf8Es3DTskAoKW2HGke41yS3bkjFPpG9r771QXns34"
 			]
 		}
 	},

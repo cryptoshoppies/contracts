@@ -7,9 +7,7 @@ interface IBreeding {
     /// @param genes1 genes of mom
     /// @param genes2 genes of dad
     /// @return the genes that are supposed to be passed down the child
-    function breading(
-        uint256 genes1,
-        uint256 genes2,
-        uint256 generation
-    ) external returns (uint256);
+    function breading(uint256 genes1, uint256 genes2)
+        external
+        returns (uint256);
 }

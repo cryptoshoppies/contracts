@@ -11,6 +11,13 @@ import "contracts/common/ICoin.sol";
 import "contracts/common/IBreeding.sol";
 
 contract NFT is ERC721, Ownable, ERC2771Recipient {
+    struct Token {
+        uint256 parent1;
+        uint256 parent2;
+        uint256 genes;
+        uint8 charge;
+    }
+
     using Strings for uint256;
     using Counters for Counters.Counter;
 
@@ -18,20 +25,14 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         uint256 tokenId,
         uint256 parent1,
         uint256 parent2,
-        uint256 genes
+        uint256 genes,
+        uint8 charge
     );
+
     event Charged(uint256 tokenId, uint8 charge);
 
     Counters.Counter private _currTokenId;
     uint8 private _breedingPrice;
-
-    struct Token {
-        uint256 parent1;
-        uint256 parent2;
-        uint256 genes;
-        uint256 generation;
-        uint8 charge;
-    }
 
     mapping(uint256 => Token) private Tokens;
 
@@ -42,7 +43,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     string private _baseURL;
     string private _baseExtension = ".json";
 
-    constructor() ERC2771Recipient() ERC721("ShoToken", "STKN") {}
+    constructor() ERC2771Recipient() ERC721("ShoToken", "SHOTKN") {}
 
     // цей метод має викликатись сервером для створення НФТ при скануванні QR- коду.
     /// @param _genes гени токену з картки
@@ -52,13 +53,12 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         onlyOwner
         returns (uint256)
     {
-        return (CreateToken(0, 0, 0, _genes, _charge));
+        return (CreateToken(0, 0, _genes, _charge));
     }
 
     function CreateToken(
         uint256 _parent1,
         uint256 _parent2,
-        uint256 _generation,
         uint256 _genes,
         uint8 _charge
     ) internal returns (uint256) {
@@ -66,7 +66,6 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             parent1: _parent1,
             parent2: _parent2,
             genes: _genes,
-            generation: _generation,
             charge: _charge
         });
 
@@ -76,7 +75,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         Tokens[tokenId] = _token;
         _safeMint(owner(), tokenId);
 
-        emit WasBorn(tokenId, _parent1, _parent2, _genes);
+        emit WasBorn(tokenId, _parent1, _parent2, _genes, _charge);
 
         return tokenId;
     }
@@ -98,14 +97,12 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         require(dad.charge >= _breedingPrice, "insufficient charge");
 
         // Визначення генерації виніс сюди, щоб не тягати дві змінні в інший контракт, якщо треба, то можна перемістити в IBreeding
-        uint256 generation = (mom.generation + dad.generation) / 2 + 1;
         uint256 _newGenes = IBreeding(_breedingContract).breading(
             mom.genes,
-            dad.genes,
-            generation
+            dad.genes
         );
 
-        _newTokenId = CreateToken(token1, token2, generation, _newGenes, 1);
+        _newTokenId = CreateToken(token1, token2, _newGenes, uint8(1));
 
         mom.charge -= _breedingPrice;
         dad.charge -= _breedingPrice;
@@ -183,7 +180,10 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         require(success);
     }
 
+    // --------------------------------------------------------------------
     // GSN
+    // --------------------------------------------------------------------
+
     function isTrustedForwarder(address forwarder)
         public
         view
