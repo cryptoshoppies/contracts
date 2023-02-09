@@ -1,0 +1,127 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "genes1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genes2",
+						"type": "uint256"
+					}
+				],
+				"name": "breading",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_genes",
+						"type": "uint256"
+					}
+				],
+				"name": "decode",
+				"outputs": [
+					{
+						"internalType": "uint8[]",
+						"name": "_traits",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8[]",
+						"name": "_traits",
+						"type": "uint8[]"
+					}
+				],
+				"name": "encode",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_genes",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"breading(uint256,uint256)": {
+					"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
+					"params": {
+						"genes1": "genes of mom",
+						"genes2": "genes of dad"
+					},
+					"returns": {
+						"_0": "the genes that are supposed to be passed down the child"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/breedings/BreedingOld.sol": "BreedingOld"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/breedings/BreedingOld.sol": {
+			"keccak256": "0x484ec461bf687c2d6116e2d66e57ec9f0c76ceb4b2456ffa0ca2972fdb866041",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d0a0995d2617459ef3345441456fc9f2cd602a0d370eb1c77e6fb4798a649fc7",
+				"dweb:/ipfs/QmXFkvVkWrq5pnedgUPbTHFarHvGjaJC8znXNfMyB6yUJg"
+			]
+		},
+		"contracts/common/IBreeding.sol": {
+			"keccak256": "0xf2b910b50f2c3808d42738834bc0ce2eaabfa6fe925f6eb5e624d09e4d7d5a20",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a3146168b8b9ac4325956b92acc534cd0ce02c010dbf7366af8dea4bc9f9b0a2",
+				"dweb:/ipfs/QmQ8LWt9HAFthPwyW1fRqn1bsUeN8b5hVs7WnNuH3Uo1p5"
+			]
+		}
+	},
+	"version": 1
+}

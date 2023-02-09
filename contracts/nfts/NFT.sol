@@ -147,6 +147,14 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         return _contractURI;
     }
 
+    function getBreedingContract() external view returns (address) {
+        return _breedingContract;
+    }
+
+    function getBreedingPrice() external view returns (uint8) {
+        return _breedingPrice;
+    }
+
     // setters
     function setBaseExtension(string memory extension) external onlyOwner {
         _baseExtension = extension;

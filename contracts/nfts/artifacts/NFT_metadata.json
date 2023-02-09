@@ -267,6 +267,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "getBreedingContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBreedingPrice",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getTrustedForwarder",
 				"outputs": [
 					{
@@ -859,11 +885,11 @@
 			]
 		},
 		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0xe8e79faea15a34f44a6bba1dae82d1e801250eaa871e4310e14327460f7b46a5",
+			"keccak256": "0x73e5b633fa2309413d14b8332169fa7520c048ef5acc83c2b82e6c42fc082e6b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://13d966fb8169cb20ff198ebcf5c5b7488f3d17c205e600d8f5d5886aa37c2add",
-				"dweb:/ipfs/QmfJZbqv4CNqhabYiV1mEGMT519NKMseE12Uu1mfV9dWXW"
+				"bzz-raw://8e218d753432cdaa96416d149f93d74390c53ad782cff5980de7147a0cf19ef8",
+				"dweb:/ipfs/QmRbGaDp5tiZpUjJuKzjKkub7XmCEhhUDoHN9fSu87ytL8"
 			]
 		},
 		"contracts/common/IBreeding.sol": {
@@ -875,11 +901,11 @@
 			]
 		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0x38ea1d09ae73783ac5d575d5cd066d14e721bd6ef2644495da7618db236fc1dc",
+			"keccak256": "0xe7707e04bce2047063399d996e2cd0756a8f8803e7e73a31a2a13a8cbfc42378",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4eec94983afb714595634bea625ecc09925d55c0352a3b844d49d4282ad6e51a",
-				"dweb:/ipfs/Qmetj6Sj7WqhE3GZedmCRcQi2v7ado7G2oscLH1Wf6rdxe"
+				"bzz-raw://2913d527412655158c0b1fd32f56eae2c89ed25d0db81237d8aa4d7e36ea6451",
+				"dweb:/ipfs/QmXiyNHyDzhDNEf2PhEcYvcVGjvNB8GtQ4KcUB5FsqUyFE"
 			]
 		}
 	},
