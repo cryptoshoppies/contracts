@@ -57,12 +57,12 @@
 			"inputs": [
 				{
 					"internalType": "uint256",
-					"name": "genes1",
+					"name": "momIn",
 					"type": "uint256"
 				},
 				{
 					"internalType": "uint256",
-					"name": "genes2",
+					"name": "dadIn",
 					"type": "uint256"
 				}
 			],
@@ -70,7 +70,17 @@
 			"outputs": [
 				{
 					"internalType": "uint256",
-					"name": "",
+					"name": "momOut",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "dadOut",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "child",
 					"type": "uint256"
 				}
 			],

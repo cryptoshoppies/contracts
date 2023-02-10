@@ -9,12 +9,12 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "genes1",
+						"name": "momIn",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "genes2",
+						"name": "dadIn",
 						"type": "uint256"
 					}
 				],
@@ -22,7 +22,17 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "momOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dadOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "child",
 						"type": "uint256"
 					}
 				],
@@ -36,11 +46,13 @@
 				"breading(uint256,uint256)": {
 					"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
 					"params": {
-						"genes1": "genes of mom",
-						"genes2": "genes of dad"
+						"dadIn": "genes of dad",
+						"momIn": "genes of mom"
 					},
 					"returns": {
-						"_0": "the genes that are supposed to be passed down the child"
+						"child": "the genes that are supposed to be passed down the child",
+						"dadOut": "modify dad genes",
+						"momOut": "modify mom genes"
 					}
 				}
 			},
@@ -62,18 +74,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/common/IBreeding.sol": {
-			"keccak256": "0xf2b910b50f2c3808d42738834bc0ce2eaabfa6fe925f6eb5e624d09e4d7d5a20",
+			"keccak256": "0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a3146168b8b9ac4325956b92acc534cd0ce02c010dbf7366af8dea4bc9f9b0a2",
-				"dweb:/ipfs/QmQ8LWt9HAFthPwyW1fRqn1bsUeN8b5hVs7WnNuH3Uo1p5"
+				"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536",
+				"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH"
 			]
 		}
 	},

@@ -7,20 +7,21 @@ import "contracts/common/IBreeding.sol";
 import "contracts/common/GenesUtil.sol";
 
 contract Breading is Ownable, IBreeding {
-    // enum BodyPartId {
-    //     Eyes,
-    //     Mouth,
-    //     Ears,
-    //     HandL,
-    //     Head,
-    //     HandR,
-    //     LegL,
-    //     Body,
-    //     LegR
+    // enum bodyPartIndex {
+    //     Eyes  = 0,
+    //     Mouth = 1,
+    //     Ears  = 2,
+    //     HandL = 3,
+    //     Head  = 4,
+    //     HandR = 5,
+    //     LegL  = 6,
+    //     Body  = 7,
+    //     LegR  = 8
     // }
 
     using GenesUtil for uint256;
 
+    uint8 private _breedingChargePrice = 1;
     uint256 private _globalSeed = 1;
     uint256 private _randomPercent = 5;
     uint256 private _minArcane = 1;
@@ -28,18 +29,31 @@ contract Breading is Ownable, IBreeding {
     uint256 private _minId = 1;
     uint256 private _maxId = 36;
 
-    function breading(uint256 genes1, uint256 genes2)
+    function breading(uint256 momIn, uint256 dadIn)
         external
-        returns (uint256)
+        returns (
+            uint256 momOut,
+            uint256 dadOut,
+            uint256 genes
+        )
     {
+        require(
+            GenesUtil.getCharges(momIn) >= _breedingChargePrice,
+            "insufficient charge"
+        );
+        require(
+            GenesUtil.getCharges(dadIn) >= _breedingChargePrice,
+            "insufficient charge"
+        );
+
         uint256 randomSeed = uint256(
             keccak256(
                 abi.encodePacked(
                     block.timestamp,
                     block.number,
                     block.prevrandao,
-                    genes1,
-                    genes2,
+                    momIn,
+                    dadIn,
                     _globalSeed
                 )
             )
@@ -49,15 +63,15 @@ contract Breading is Ownable, IBreeding {
 
         _globalSeed++;
 
-        uint32 generation = (GenesUtil.getGeneration(genes1) +
-            GenesUtil.getGeneration(genes2)) /
+        uint32 generation = (GenesUtil.getGeneration(momIn) +
+            GenesUtil.getGeneration(dadIn)) /
             2 +
             1;
 
-        uint8 bodyPartsCount = 9;
+        uint256 bodyPartsCount = 9;
         uint256 randomIndex = 0;
 
-        uint256 genes = 0;
+        genes = 0;
 
         // body parts
         for (
@@ -77,13 +91,14 @@ contract Breading is Ownable, IBreeding {
             uint8 id = 1;
             if (_randomPercent >= random(_globalSeed, randomIndex++, 0, 100)) {
                 id = uint8(
-                    random(_globalSeed, randomIndex++, _minId, _maxId + 1) & 0xFF
+                    random(_globalSeed, randomIndex++, _minId, _maxId + 1) &
+                        0xFF
                 );
             } else {
                 if (random(_globalSeed, randomIndex++, 0, 100) >= 50) {
-                    id = GenesUtil.getId(genes2, bodyPartIndex);
+                    id = GenesUtil.getId(dadIn, bodyPartIndex);
                 } else {
-                    id = GenesUtil.getId(genes1, bodyPartIndex);
+                    id = GenesUtil.getId(momIn, bodyPartIndex);
                 }
             }
 
@@ -92,20 +107,32 @@ contract Breading is Ownable, IBreeding {
             genes = GenesUtil.setArcane(genes, bodyPartIndex, isArc ? 1 : 0);
         }
 
+        // mom charges
+        momOut = GenesUtil.setCharges(
+            momIn,
+            GenesUtil.getCharges(momIn) - _breedingChargePrice
+        );
+
+        // dad charges
+        dadOut = GenesUtil.setCharges(
+            dadIn,
+            GenesUtil.getCharges(dadIn) - _breedingChargePrice
+        );
+
         // set generation
         genes = GenesUtil.setGeneration(genes, generation);
 
         // set charges
         genes = GenesUtil.setCharges(genes, 1);
 
-        return genes;
+        return (momOut, dadOut, genes);
     }
 
     // --------------------------------------------------------------------
     // GET / SET
     // --------------------------------------------------------------------
 
-    function getGlobalSeed() external view returns (uint256) {
+    function getGlobalSeed() public view returns (uint256) {
         return _globalSeed;
     }
 
@@ -115,7 +142,7 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getMinArcane() external view returns (uint256) {
+    function getMinArcane() public view returns (uint256) {
         return _minArcane;
     }
 
@@ -125,7 +152,7 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getMaxArcane() external view returns (uint256) {
+    function getMaxArcane() public view returns (uint256) {
         return _maxArcane;
     }
 
@@ -135,7 +162,7 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getRandomPercent() external view returns (uint256) {
+    function getRandomPercent() public view returns (uint256) {
         return _randomPercent;
     }
 
@@ -145,7 +172,7 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getMinId() external view returns (uint256) {
+    function getMinId() public view returns (uint256) {
         return _minId;
     }
 
@@ -155,12 +182,22 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getMaxId() external view returns (uint256) {
+    function getMaxId() public view returns (uint256) {
         return _maxId;
     }
 
     function setMaxId(uint256 value) public onlyOwner {
         _maxId = value;
+    }
+
+    // --------------------------------------------------------------------
+
+    function getBreedingPrice() public view returns (uint8) {
+        return _breedingChargePrice;
+    }
+
+    function setBreedingPrice(uint8 price) public onlyOwner {
+        _breedingChargePrice = price;
     }
 
     // --------------------------------------------------------------------

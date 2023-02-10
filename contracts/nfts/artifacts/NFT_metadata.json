@@ -279,13 +279,29 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getBreedingPrice",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getToken",
 				"outputs": [
 					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
+						"internalType": "uint256",
+						"name": "mom",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dad",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genes",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -529,19 +545,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint8",
-						"name": "price",
-						"type": "uint8"
-					}
-				],
-				"name": "setBreedingPrice",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "URI",
 						"type": "string"
@@ -746,11 +749,20 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
+				"breeding(uint256,uint256)": {
+					"notice": "server method - make a new child"
+				},
+				"charge(uint256,uint8)": {
+					"notice": "server method - charge NFT"
+				},
 				"getTrustedForwarder()": {
 					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder.Method is not a required method to allow Recipients to trust multiple Forwarders. Not recommended yet."
 				},
 				"isTrustedForwarder(address)": {
 					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder."
+				},
+				"mint(uint256)": {
+					"notice": "server method - mint nft"
 				}
 			},
 			"version": 1
@@ -893,19 +905,19 @@
 			]
 		},
 		"contracts/common/IBreeding.sol": {
-			"keccak256": "0xf2b910b50f2c3808d42738834bc0ce2eaabfa6fe925f6eb5e624d09e4d7d5a20",
+			"keccak256": "0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a3146168b8b9ac4325956b92acc534cd0ce02c010dbf7366af8dea4bc9f9b0a2",
-				"dweb:/ipfs/QmQ8LWt9HAFthPwyW1fRqn1bsUeN8b5hVs7WnNuH3Uo1p5"
+				"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536",
+				"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH"
 			]
 		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0xe7707e04bce2047063399d996e2cd0756a8f8803e7e73a31a2a13a8cbfc42378",
+			"keccak256": "0xad04484d639d7f992e206ab7af7eebeee1f9cc0852b72ac6029d6690efdf72d5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2913d527412655158c0b1fd32f56eae2c89ed25d0db81237d8aa4d7e36ea6451",
-				"dweb:/ipfs/QmXiyNHyDzhDNEf2PhEcYvcVGjvNB8GtQ4KcUB5FsqUyFE"
+				"bzz-raw://e6f9356bcde475a1d7507f7288607dc4868dba7fcae4b8457110872680d4738d",
+				"dweb:/ipfs/QmehuhFFyuxzPwYX3GNXdAAJ4oXs9UYsym6AFQCspH4Cez"
 			]
 		}
 	},

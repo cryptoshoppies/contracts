@@ -28,12 +28,12 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "genes1",
+						"name": "momIn",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "genes2",
+						"name": "dadIn",
 						"type": "uint256"
 					}
 				],
@@ -41,11 +41,34 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "momOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dadOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "genes",
 						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBreedingPrice",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -149,6 +172,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint8",
+						"name": "price",
+						"type": "uint8"
+					}
+				],
+				"name": "setBreedingPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "value",
 						"type": "uint256"
@@ -244,11 +280,13 @@
 				"breading(uint256,uint256)": {
 					"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
 					"params": {
-						"genes1": "genes of mom",
-						"genes2": "genes of dad"
+						"dadIn": "genes of dad",
+						"momIn": "genes of mom"
 					},
 					"returns": {
-						"_0": "the genes that are supposed to be passed down the child"
+						"dadOut": "modify dad genes",
+						"genes": "the genes that are supposed to be passed down the child",
+						"momOut": "modify mom genes"
 					}
 				},
 				"owner()": {
@@ -302,11 +340,11 @@
 			]
 		},
 		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0x9d7ba50fad0beebe72ca3552907a026a85894bf6fb2bdda9a99a41ba74d9b60c",
+			"keccak256": "0x8bf3ba7b817a37d5b2c91ed3c7e2e80720946b715e03624f95a676a575a5f427",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://84c40733b102acf2015206c539700e7100ea8ae2f44612a225090210d2ad2b7f",
-				"dweb:/ipfs/QmQwCWsBdnmnjymzw7NLffSVawwvxpxRkmfzPjQoJQiPAE"
+				"bzz-raw://f282fbd23490e44f64adb787e6404ce8c4c353dc2e9ffaf6177a4ef114f071cc",
+				"dweb:/ipfs/QmfZob8NvRD8eJzT8AKfYzJuWA5fVv3ETbyvUjumXv5oLz"
 			]
 		},
 		"contracts/common/GenesUtil.sol": {
@@ -318,11 +356,11 @@
 			]
 		},
 		"contracts/common/IBreeding.sol": {
-			"keccak256": "0xf2b910b50f2c3808d42738834bc0ce2eaabfa6fe925f6eb5e624d09e4d7d5a20",
+			"keccak256": "0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a3146168b8b9ac4325956b92acc534cd0ce02c010dbf7366af8dea4bc9f9b0a2",
-				"dweb:/ipfs/QmQ8LWt9HAFthPwyW1fRqn1bsUeN8b5hVs7WnNuH3Uo1p5"
+				"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536",
+				"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH"
 			]
 		}
 	},

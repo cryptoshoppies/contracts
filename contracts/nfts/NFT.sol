@@ -11,15 +11,30 @@ import "contracts/common/IBreeding.sol";
 import "contracts/common/GenesUtil.sol";
 
 contract NFT is ERC721, Ownable, ERC2771Recipient {
+    // --------------------------------------------------------------------
+    // STRUCT
+    // --------------------------------------------------------------------
+
     struct Token {
+        // mom tokenId, (can be 0)
         uint256 parent1;
+        // dad tokenId, (can be 0)
         uint256 parent2;
+        // genes
         uint256 genes;
     }
+
+    // --------------------------------------------------------------------
+    // USING
+    // --------------------------------------------------------------------
 
     using Strings for uint256;
     using Counters for Counters.Counter;
     using GenesUtil for uint256;
+
+    // --------------------------------------------------------------------
+    // EVENTS
+    // --------------------------------------------------------------------
 
     event WasBorn(
         uint256 tokenId,
@@ -30,13 +45,20 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
     event Charged(uint256 tokenId, uint256 genes);
 
+    // --------------------------------------------------------------------
+    // FIELDS
+    // --------------------------------------------------------------------
+
     Counters.Counter private _currTokenId;
-    uint8 private _breedingPrice = 1;
     mapping(uint256 => Token) private _tokens;
     address private _breedingContract;
     string private _contractURI;
     string private _baseURL;
     string private _baseExtension = ".json";
+
+    // --------------------------------------------------------------------
+    // CONSTRUCTOR
+    // --------------------------------------------------------------------
 
     constructor() ERC2771Recipient() ERC721("ShoToken", "SHOTKN") {}
 
@@ -44,14 +66,13 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     // SERVER METHODS
     // --------------------------------------------------------------------
 
-    // server method
+    /// server method - mint nft
     /// @param genes - genes, generation and charge
     function mint(uint256 genes) external onlyOwner returns (uint256) {
         return createToken(0, 0, genes);
     }
 
-    // server method
-    // make a new child
+    /// server method - make a new child
     function breeding(uint256 token1, uint256 token2)
         external
         onlyOwner
@@ -60,41 +81,23 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         require(_exists(token1), "query for nonexistent token");
         require(_exists(token2), "query for nonexistent token");
 
-        //WARNING: Якщо в ми ніде не зберігаємо власника токена в контракті, то неможливо перевірити в контракті чи він має право робити бридінг!
         Token storage mom = _tokens[token1];
         Token storage dad = _tokens[token2];
 
-        // TODO: Або ж логіку можна задати як сумму енергії баться і мами, або в залежності від генерації задати массив вартостей
-        require(
-            GenesUtil.getCharges(mom.genes) >= _breedingPrice,
-            "insufficient charge"
-        );
-        require(
-            GenesUtil.getCharges(dad.genes) >= _breedingPrice,
-            "insufficient charge"
-        );
+        // breading with mom and dad
+        (uint256 momOut, uint256 dadOut, uint256 child) = IBreeding(
+            _breedingContract
+        ).breading(mom.genes, dad.genes);
 
-        // Визначення генерації виніс сюди, щоб не тягати дві змінні в інший контракт, якщо треба, то можна перемістити в IBreeding
-        uint256 newGenes = IBreeding(_breedingContract).breading(
-            mom.genes,
-            dad.genes
-        );
+        newTokenId = createToken(token1, token2, child);
 
-        newTokenId = createToken(token1, token2, newGenes);
-
-        mom.genes = GenesUtil.setCharges(
-            mom.genes,
-            GenesUtil.getCharges(mom.genes) - _breedingPrice
-        );
-        dad.genes = GenesUtil.setCharges(
-            dad.genes,
-            GenesUtil.getCharges(dad.genes) - _breedingPrice
-        );
+        mom.genes = momOut;
+        dad.genes = dadOut;
 
         return newTokenId;
     }
 
-    // charge NFT (we have to be a payer)
+    /// server method - charge NFT
     function charge(uint256 tokenId, uint8 value) external onlyOwner {
         require(_exists(tokenId), "query for nonexistent token");
 
@@ -116,7 +119,7 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         uint256 parent1,
         uint256 parent2,
         uint256 genes
-    ) internal returns (uint256) {
+    ) private returns (uint256) {
         Token memory token = Token({
             parent1: parent1,
             parent2: parent2,
@@ -139,6 +142,19 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     // --------------------------------------------------------------------
 
     // geters
+    function getToken(uint256 tokenId)
+        public
+        view
+        returns (
+            uint256 mom,
+            uint256 dad,
+            uint256 genes
+        )
+    {
+        Token storage token = _tokens[tokenId];
+        return (token.parent1, token.parent2, token.genes);
+    }
+
     function totalSupply() external view returns (uint256) {
         return Counters.current(_currTokenId);
     }
@@ -149,10 +165,6 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
     function getBreedingContract() external view returns (address) {
         return _breedingContract;
-    }
-
-    function getBreedingPrice() external view returns (uint8) {
-        return _breedingPrice;
     }
 
     // setters
@@ -170,10 +182,6 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
     function setBreedingContract(address breedingContract) public onlyOwner {
         _breedingContract = breedingContract;
-    }
-
-    function setBreedingPrice(uint8 price) public onlyOwner {
-        _breedingPrice = price;
     }
 
     //
