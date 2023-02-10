@@ -766,7 +766,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -885,11 +885,11 @@
 			]
 		},
 		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0x73e5b633fa2309413d14b8332169fa7520c048ef5acc83c2b82e6c42fc082e6b",
+			"keccak256": "0x374618d733e69d4fc8b13fb7feffb00bc4604d773b34fbdf7ca7ec9fc09d872a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8e218d753432cdaa96416d149f93d74390c53ad782cff5980de7147a0cf19ef8",
-				"dweb:/ipfs/QmRbGaDp5tiZpUjJuKzjKkub7XmCEhhUDoHN9fSu87ytL8"
+				"bzz-raw://ac0d2d33ca84b4518d01bf8fe146716cb96e518e266f2b7d31677e862203e91c",
+				"dweb:/ipfs/Qmdvc2MBqwVgvLk5sR3yAURe4ovdL9cpuz1Q6rACWReGZv"
 			]
 		},
 		"contracts/common/IBreeding.sol": {

@@ -76,7 +76,33 @@
 			},
 			{
 				"inputs": [],
+				"name": "getMaxId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getMinArcane",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMinId",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -154,7 +180,33 @@
 						"type": "uint256"
 					}
 				],
+				"name": "setMaxId",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
 				"name": "setMinArcane",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinId",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -227,7 +279,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -250,11 +302,11 @@
 			]
 		},
 		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0xb1c226e155ed287468405f859c86c354f60533d7c6966fe93fd94ea75f640a70",
+			"keccak256": "0x9d7ba50fad0beebe72ca3552907a026a85894bf6fb2bdda9a99a41ba74d9b60c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5f33d64ac2cafff99b369504f5ce0a2e77e3105617abaccf1b5b0f81d041750c",
-				"dweb:/ipfs/QmNk1iPc4EaxYfwUgvS2JRQHrMb2LE2U3JJm2LJwefhojm"
+				"bzz-raw://84c40733b102acf2015206c539700e7100ea8ae2f44612a225090210d2ad2b7f",
+				"dweb:/ipfs/QmQwCWsBdnmnjymzw7NLffSVawwvxpxRkmfzPjQoJQiPAE"
 			]
 		},
 		"contracts/common/GenesUtil.sol": {
