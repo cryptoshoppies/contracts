@@ -60,7 +60,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "getBreedingPrice",
+				"name": "getBreedingChargePrice",
 				"outputs": [
 					{
 						"internalType": "uint8",
@@ -177,7 +177,7 @@
 						"type": "uint8"
 					}
 				],
-				"name": "setBreedingPrice",
+				"name": "setBreedingChargePrice",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -317,7 +317,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -340,11 +340,11 @@
 			]
 		},
 		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0x8bf3ba7b817a37d5b2c91ed3c7e2e80720946b715e03624f95a676a575a5f427",
+			"keccak256": "0x43b37d3697e78dd5d76e2f3928689de192e05d40835d64313b6ff078d674e220",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f282fbd23490e44f64adb787e6404ce8c4c353dc2e9ffaf6177a4ef114f071cc",
-				"dweb:/ipfs/QmfZob8NvRD8eJzT8AKfYzJuWA5fVv3ETbyvUjumXv5oLz"
+				"bzz-raw://3a7b52139f0ac93d4699713e1810e31ea8a370a056e1f8a0312ef79a02ece3bd",
+				"dweb:/ipfs/QmRUZKe9jaFeTRJV6WvA8s9wkTz27mJm1zKBrpKKNBN9Uh"
 			]
 		},
 		"contracts/common/GenesUtil.sol": {

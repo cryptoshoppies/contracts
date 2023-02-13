@@ -21,7 +21,7 @@ contract Breading is Ownable, IBreeding {
 
     using GenesUtil for uint256;
 
-    uint8 private _breedingChargePrice = 1;
+    uint8 private _breedingChargePrice = 0;
     uint256 private _globalSeed = 1;
     uint256 private _randomPercent = 5;
     uint256 private _minArcane = 1;
@@ -192,11 +192,11 @@ contract Breading is Ownable, IBreeding {
 
     // --------------------------------------------------------------------
 
-    function getBreedingPrice() public view returns (uint8) {
+    function getBreedingChargePrice() public view returns (uint8) {
         return _breedingChargePrice;
     }
 
-    function setBreedingPrice(uint8 price) public onlyOwner {
+    function setBreedingChargePrice(uint8 price) public onlyOwner {
         _breedingChargePrice = price;
     }
 
