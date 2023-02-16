@@ -340,11 +340,11 @@
 			]
 		},
 		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0x43b37d3697e78dd5d76e2f3928689de192e05d40835d64313b6ff078d674e220",
+			"keccak256": "0x94d216b0d49ea5dd0ec0d1765bd0a72b869aa451c76d9418afb619bc4b387972",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3a7b52139f0ac93d4699713e1810e31ea8a370a056e1f8a0312ef79a02ece3bd",
-				"dweb:/ipfs/QmRUZKe9jaFeTRJV6WvA8s9wkTz27mJm1zKBrpKKNBN9Uh"
+				"bzz-raw://a186c3108eda4a23f61221864a411f0c359730458cdf07bc2552b6d74dcc0bdf",
+				"dweb:/ipfs/QmaXUAtjPo8F4njZyknm8wPNL9FZ8Kx16GEgaZsqToTsYP"
 			]
 		},
 		"contracts/common/GenesUtil.sol": {

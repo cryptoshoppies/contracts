@@ -37,14 +37,16 @@ contract Breading is Ownable, IBreeding {
             uint256 genes
         )
     {
-        require(
-            GenesUtil.getCharges(momIn) >= _breedingChargePrice,
-            "insufficient charge"
-        );
-        require(
-            GenesUtil.getCharges(dadIn) >= _breedingChargePrice,
-            "insufficient charge"
-        );
+        if (_breedingChargePrice != 0) {
+            require(
+                GenesUtil.getCharges(momIn) >= _breedingChargePrice,
+                "insufficient charge"
+            );
+            require(
+                GenesUtil.getCharges(dadIn) >= _breedingChargePrice,
+                "insufficient charge"
+            );
+        }
 
         uint256 randomSeed = uint256(
             keccak256(
@@ -86,16 +88,16 @@ contract Breading is Ownable, IBreeding {
                 100
             );
             bool isArc = arcanePercent >=
-                random(_globalSeed, randomIndex++, 0, _maxArcane * 100);
+                random(randomSeed, randomIndex++, 0, (_maxArcane - _minArcane) * 100);
 
             uint8 id = 1;
-            if (_randomPercent >= random(_globalSeed, randomIndex++, 0, 100)) {
+            if (_randomPercent >= random(randomSeed, randomIndex++, 0, 100)) {
                 id = uint8(
-                    random(_globalSeed, randomIndex++, _minId, _maxId + 1) &
+                    random(randomSeed, randomIndex++, _minId, _maxId + 1) &
                         0xFF
                 );
             } else {
-                if (random(_globalSeed, randomIndex++, 0, 100) >= 50) {
+                if (random(randomSeed, randomIndex++, 0, 100) >= 50) {
                     id = GenesUtil.getId(dadIn, bodyPartIndex);
                 } else {
                     id = GenesUtil.getId(momIn, bodyPartIndex);
@@ -107,17 +109,19 @@ contract Breading is Ownable, IBreeding {
             genes = GenesUtil.setArcane(genes, bodyPartIndex, isArc ? 1 : 0);
         }
 
-        // mom charges
-        momOut = GenesUtil.setCharges(
-            momIn,
-            GenesUtil.getCharges(momIn) - _breedingChargePrice
-        );
+        if (_breedingChargePrice != 0) {
+            // mom charges
+            momOut = GenesUtil.setCharges(
+                momIn,
+                GenesUtil.getCharges(momIn) - _breedingChargePrice
+            );
 
-        // dad charges
-        dadOut = GenesUtil.setCharges(
-            dadIn,
-            GenesUtil.getCharges(dadIn) - _breedingChargePrice
-        );
+            // dad charges
+            dadOut = GenesUtil.setCharges(
+                dadIn,
+                GenesUtil.getCharges(dadIn) - _breedingChargePrice
+            );
+        }
 
         // set generation
         genes = GenesUtil.setGeneration(genes, generation);
