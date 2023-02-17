@@ -104,6 +104,8 @@ contract Breading is Ownable, IBreeding {
                 }
             }
 
+            require(id >= _minId && id <= _maxId, "error, breading, part id must be in range");
+
             genes = GenesUtil.setId(genes, bodyPartIndex, id);
             genes = GenesUtil.setLevel(genes, bodyPartIndex, 1);
             genes = GenesUtil.setArcane(genes, bodyPartIndex, isArc ? 1 : 0);
