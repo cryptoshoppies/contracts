@@ -74,6 +74,8 @@ contract Breading is Ownable, IBreeding {
         uint256 randomIndex = 0;
 
         genes = 0;
+        momOut = momIn;
+        dadOut = dadIn;
 
         // body parts
         for (
