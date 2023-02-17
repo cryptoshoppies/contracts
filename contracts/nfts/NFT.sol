@@ -172,12 +172,12 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         _baseExtension = extension;
     }
 
-    function setContractURI(string calldata URI) external onlyOwner {
-        _contractURI = URI;
+    function setContractURI(string calldata uri) external onlyOwner {
+        _contractURI = uri;
     }
 
-    function setBaseURI(string memory URI) external onlyOwner {
-        _baseURL = URI;
+    function setBaseURI(string memory uri) external onlyOwner {
+        _baseURL = uri;
     }
 
     function setBreedingContract(address breedingContract) public onlyOwner {

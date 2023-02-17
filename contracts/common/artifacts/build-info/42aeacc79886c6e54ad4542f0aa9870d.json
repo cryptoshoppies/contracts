@@ -1,0 +1,357 @@
+{
+	"id": "42aeacc79886c6e54ad4542f0aa9870d",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/common/IBreeding.sol": {
+				"content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.17;\n\ninterface IBreeding {\n    /// @dev given genes of token 1 & 2, return a genetic combination - may have a random factor\n    /// @param momIn genes of mom\n    /// @param dadIn genes of dad\n    /// @return momOut modify mom genes\n    /// @return dadOut modify dad genes\n    /// @return child the genes that are supposed to be passed down the child\n    function breading(uint256 momIn, uint256 dadIn)\n        external\n        returns (\n            uint256 momOut,\n            uint256 dadOut,\n            uint256 child\n        );\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/common/IBreeding.sol": {
+				"IBreeding": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "momIn",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "dadIn",
+									"type": "uint256"
+								}
+							],
+							"name": "breading",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "momOut",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "dadOut",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "child",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"breading(uint256,uint256)": {
+								"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
+								"params": {
+									"dadIn": "genes of dad",
+									"momIn": "genes of mom"
+								},
+								"returns": {
+									"child": "the genes that are supposed to be passed down the child",
+									"dadOut": "modify dad genes",
+									"momOut": "modify mom genes"
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"breading(uint256,uint256)": "e4a13fb7"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"momIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dadIn\",\"type\":\"uint256\"}],\"name\":\"breading\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"momOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"dadOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"child\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"breading(uint256,uint256)\":{\"details\":\"given genes of token 1 & 2, return a genetic combination - may have a random factor\",\"params\":{\"dadIn\":\"genes of dad\",\"momIn\":\"genes of mom\"},\"returns\":{\"child\":\"the genes that are supposed to be passed down the child\",\"dadOut\":\"modify dad genes\",\"momOut\":\"modify mom genes\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/common/IBreeding.sol\":\"IBreeding\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/common/IBreeding.sol\":{\"keccak256\":\"0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536\",\"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/common/IBreeding.sol": {
+				"ast": {
+					"absolutePath": "contracts/common/IBreeding.sol",
+					"exportedSymbols": {
+						"IBreeding": [
+							16
+						]
+					},
+					"id": 17,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".17"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IBreeding",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 16,
+							"linearizedBaseContracts": [
+								16
+							],
+							"name": "IBreeding",
+							"nameLocation": "69:9:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 2,
+										"nodeType": "StructuredDocumentation",
+										"src": "85:318:0",
+										"text": "@dev given genes of token 1 & 2, return a genetic combination - may have a random factor\n @param momIn genes of mom\n @param dadIn genes of dad\n @return momOut modify mom genes\n @return dadOut modify dad genes\n @return child the genes that are supposed to be passed down the child"
+									},
+									"functionSelector": "e4a13fb7",
+									"id": 15,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "breading",
+									"nameLocation": "417:8:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 7,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"mutability": "mutable",
+												"name": "momIn",
+												"nameLocation": "434:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "426:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 3,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "426:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 6,
+												"mutability": "mutable",
+												"name": "dadIn",
+												"nameLocation": "449:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "441:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 5,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "441:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "425:30:0"
+									},
+									"returnParameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 9,
+												"mutability": "mutable",
+												"name": "momOut",
+												"nameLocation": "511:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "503:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 8,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "503:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 11,
+												"mutability": "mutable",
+												"name": "dadOut",
+												"nameLocation": "539:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "531:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 10,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "531:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "child",
+												"nameLocation": "567:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "559:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "559:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "489:93:0"
+									},
+									"scope": 16,
+									"src": "408:175:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 17,
+							"src": "59:526:0",
+							"usedErrors": []
+						}
+					],
+					"src": "33:553:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

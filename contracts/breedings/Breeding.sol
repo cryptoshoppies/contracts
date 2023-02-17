@@ -85,19 +85,19 @@ contract Breading is Ownable, IBreeding {
                 generation,
                 _minArcane,
                 _maxArcane,
-                100
+                1000
             );
             bool isArc = arcanePercent >=
-                random(randomSeed, randomIndex++, 0, (_maxArcane - _minArcane) * 100);
+                random(randomSeed, randomIndex++, 0, ((_maxArcane - _minArcane) * 1000) / _maxArcane);
 
             uint8 id = 1;
-            if (_randomPercent >= random(randomSeed, randomIndex++, 0, 100)) {
+            if ((_randomPercent * 10) >= random(randomSeed, randomIndex++, 0, 1000)) {
                 id = uint8(
                     random(randomSeed, randomIndex++, _minId, _maxId + 1) &
                         0xFF
                 );
             } else {
-                if (random(randomSeed, randomIndex++, 0, 100) >= 50) {
+                if (random(randomSeed, randomIndex++, 0, 1000) >= 500) {
                     id = GenesUtil.getId(dadIn, bodyPartIndex);
                 } else {
                     id = GenesUtil.getId(momIn, bodyPartIndex);
