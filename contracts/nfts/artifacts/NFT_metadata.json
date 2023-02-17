@@ -279,6 +279,32 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getMaxId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMinId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -551,6 +577,32 @@
 					}
 				],
 				"name": "setContractURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "setMaxId",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinId",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -913,11 +965,11 @@
 			]
 		},
 		"contracts/nfts/NFT.sol": {
-			"keccak256": "0xd0f85a30caa288f1f62ba406c75a08165b07adf4b34b75403a804f387ff86913",
+			"keccak256": "0xb07361f3eb614ef0431db4919783b2e4b8fb8399eccc88651044a7fc8137ac73",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://da1c94ddd623ae1f3e5e27804964baf9227a146e1f55e8d5680fe8ba18376d8f",
-				"dweb:/ipfs/QmXTmfETBXxuSFemrBhDvj6sv9Ew6ngh8UzBkPkGsQk8RJ"
+				"bzz-raw://f91657cbce854eccdfb1121e77394e254b9eba4ac7c5e30db7e177808ebdc572",
+				"dweb:/ipfs/QmaaYWZRMPSQkWj6HcjuST1bpuTr7R138DoS1rPztbSfov"
 			]
 		}
 	},

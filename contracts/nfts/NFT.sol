@@ -55,6 +55,8 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     string private _contractURI;
     string private _baseURL;
     string private _baseExtension = ".json";
+    uint256 private _minId = 1;
+    uint256 private _maxId = 36;
 
     // --------------------------------------------------------------------
     // CONSTRUCTOR
@@ -120,6 +122,20 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         uint256 parent2,
         uint256 genes
     ) private returns (uint256) {
+
+        uint256 bodyPartsCount = 9;
+        for (
+            uint8 bodyPartIndex = 0;
+            bodyPartIndex < bodyPartsCount;
+            bodyPartIndex++
+        ) {
+            uint8 id = GenesUtil.getId(genes, bodyPartIndex);
+            require(id >= _minId && id <= _maxId, "error, createToken, part id must be in range");
+
+            uint8 level = GenesUtil.getLevel(genes, bodyPartIndex);
+            require(level > 0, "error, createToken, part level must be greater than 0");
+        }
+
         Token memory token = Token({
             parent1: parent1,
             parent2: parent2,
@@ -136,6 +152,29 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
         return tokenId;
     }
+
+    // --------------------------------------------------------------------
+
+    function getMinId() public view returns (uint256) {
+        return _minId;
+    }
+
+    function setMinId(uint256 value) public onlyOwner {
+        _minId = value;
+    }
+
+    // --------------------------------------------------------------------
+
+    function getMaxId() public view returns (uint256) {
+        return _maxId;
+    }
+
+    function setMaxId(uint256 value) public onlyOwner {
+        _maxId = value;
+    }
+
+    // --------------------------------------------------------------------
+
 
     // --------------------------------------------------------------------
     // NFT
