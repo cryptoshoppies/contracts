@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -81,11 +81,11 @@
 	},
 	"sources": {
 		"contracts/common/IBreeding.sol": {
-			"keccak256": "0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5",
+			"keccak256": "0x641a5538120ef7978c9ee948157c243feca1d4e008da437a9d26adf519e8fd02",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536",
-				"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH"
+				"bzz-raw://e93400c7dc7a5a1707654f6ef2106914bc3bced5c82b2adf4238bd055e270a72",
+				"dweb:/ipfs/QmfKNZmeZh8sUsQH7KdMK7qaXCXr3Kp7eKRcES5afnAddR"
 			]
 		}
 	},

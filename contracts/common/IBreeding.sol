@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 interface IBreeding {
     /// @dev given genes of token 1 & 2, return a genetic combination - may have a random factor

@@ -1,0 +1,100 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getTrustedForwarder",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "forwarder",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "forwarder",
+						"type": "address"
+					}
+				],
+				"name": "isTrustedForwarder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getTrustedForwarder()": {
+					"returns": {
+						"forwarder": "The address of the Forwarder contract that is being used."
+					}
+				},
+				"isTrustedForwarder(address)": {
+					"params": {
+						"forwarder": "The address of the Forwarder contract that is being used."
+					},
+					"returns": {
+						"_0": "isTrustedForwarder `true` if the Forwarder is trusted to forward relayed transactions by this Recipient."
+					}
+				}
+			},
+			"title": "The ERC-2771 Recipient Base Abstract Class - Implementation",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getTrustedForwarder()": {
+					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder.Method is not a required method to allow Recipients to trust multiple Forwarders. Not recommended yet."
+				},
+				"isTrustedForwarder(address)": {
+					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder."
+				}
+			},
+			"notice": "Note that this contract was called `BaseRelayRecipient` in the previous revision of the GSN.A base contract to be inherited by any contract that want to receive relayed transactions.A subclass must use `_msgSender()` instead of `msg.sender`.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/nfts/NFT.sol_flattened.sol": "ERC2771Recipient"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/nfts/NFT.sol_flattened.sol": {
+			"keccak256": "0xc3b4de49455031a4516c6a66ac96c0851e2e8435441edbf782975c8e592a69f4",
+			"urls": [
+				"bzz-raw://da54f743b0ce8585edbd9d612ddb0bd7515993253801264f3cbdbee98dce1ca5",
+				"dweb:/ipfs/QmWEkzkkyNbvE5jnBismyN3C3PJFcAPgn3uEkwDmPBamVx"
+			]
+		}
+	},
+	"version": 1
+}

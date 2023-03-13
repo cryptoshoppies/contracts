@@ -1,16 +1,18 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@opengsn/contracts/src/interfaces/IERC2771Recipient.sol";
-import "@opengsn/contracts/src/ERC2771Recipient.sol";
-import "contracts/common/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 import "contracts/common/IBreeding.sol";
 import "contracts/common/GenesUtil.sol";
+import "contracts/breedings/Breeding.sol";
 
-contract NFT is ERC721, Ownable, ERC2771Recipient {
+/// @custom:security-contact supportcs@ntiloyalty.com
+contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
     // --------------------------------------------------------------------
     // STRUCT
     // --------------------------------------------------------------------
@@ -49,12 +51,9 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     // FIELDS
     // --------------------------------------------------------------------
 
-    Counters.Counter private _currTokenId;
+    Counters.Counter private _tokenIdCounter;
     mapping(uint256 => Token) private _tokens;
     address private _breedingContract;
-    string private _contractURI;
-    string private _baseURL;
-    string private _baseExtension = ".json";
     uint256 private _minId = 1;
     uint256 private _maxId = 36;
 
@@ -62,7 +61,30 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
     // CONSTRUCTOR
     // --------------------------------------------------------------------
 
-    constructor() ERC2771Recipient() ERC721("ShoToken", "SHOTKN") {}
+    constructor() ERC721("ShoToken", "SHOTKN") {
+        _breedingContract = address(new Breeding());
+    }
+
+    function _baseURI() internal pure override returns (string memory) {
+        return "nft.cryptoshopee.ntiloyalty.com";
+    }
+
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    function unpause() public onlyOwner {
+        _unpause();
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId,
+        uint256 batchSize
+    ) internal override whenNotPaused {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
+    }
 
     // --------------------------------------------------------------------
     // SERVER METHODS
@@ -122,7 +144,6 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         uint256 parent2,
         uint256 genes
     ) private returns (uint256) {
-
         uint256 bodyPartsCount = 9;
         for (
             uint8 bodyPartIndex = 0;
@@ -130,10 +151,16 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             bodyPartIndex++
         ) {
             uint8 id = GenesUtil.getId(genes, bodyPartIndex);
-            require(id >= _minId && id <= _maxId, "error, createToken, part id must be in range");
+            require(
+                id >= _minId && id <= _maxId,
+                "error, createToken, part id must be in range"
+            );
 
             uint8 level = GenesUtil.getLevel(genes, bodyPartIndex);
-            require(level > 0, "error, createToken, part level must be greater than 0");
+            require(
+                level > 0,
+                "error, createToken, part level must be greater than 0"
+            );
         }
 
         Token memory token = Token({
@@ -142,8 +169,8 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             genes: genes
         });
 
-        Counters.increment(_currTokenId);
-        uint256 tokenId = Counters.current(_currTokenId);
+        _tokenIdCounter.increment();
+        uint256 tokenId = _tokenIdCounter.current();
 
         _tokens[tokenId] = token;
         _safeMint(owner(), tokenId);
@@ -152,6 +179,10 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
         return tokenId;
     }
+
+    // --------------------------------------------------------------------
+    // SETTINGS
+    // --------------------------------------------------------------------
 
     // --------------------------------------------------------------------
 
@@ -175,12 +206,22 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
 
     // --------------------------------------------------------------------
 
+    function getBreedingContract() external view returns (address) {
+        return _breedingContract;
+    }
+
+    function setBreedingContract(address breedingContract) public onlyOwner {
+        _breedingContract = breedingContract;
+    }
 
     // --------------------------------------------------------------------
-    // NFT
+
+    function totalSupply() external view returns (uint256) {
+        return _tokenIdCounter.current();
+    }
+
     // --------------------------------------------------------------------
 
-    // geters
     function getToken(uint256 tokenId)
         public
         view
@@ -194,36 +235,8 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
         return (token.parent1, token.parent2, token.genes);
     }
 
-    function totalSupply() external view returns (uint256) {
-        return Counters.current(_currTokenId);
-    }
+    // --------------------------------------------------------------------
 
-    function contractURI() external view returns (string memory) {
-        return _contractURI;
-    }
-
-    function getBreedingContract() external view returns (address) {
-        return _breedingContract;
-    }
-
-    // setters
-    function setBaseExtension(string memory extension) external onlyOwner {
-        _baseExtension = extension;
-    }
-
-    function setContractURI(string calldata uri) external onlyOwner {
-        _contractURI = uri;
-    }
-
-    function setBaseURI(string memory uri) external onlyOwner {
-        _baseURL = uri;
-    }
-
-    function setBreedingContract(address breedingContract) public onlyOwner {
-        _breedingContract = breedingContract;
-    }
-
-    //
     function tokenURI(uint256 tokenId)
         public
         view
@@ -236,47 +249,15 @@ contract NFT is ERC721, Ownable, ERC2771Recipient {
             "ERC721Metadata: URI query for nonexistent token"
         );
         return
-            string(
-                abi.encodePacked(_baseURL, tokenId.toString(), _baseExtension)
-            );
+            string(abi.encodePacked(_baseURI(), tokenId.toString(), ".json"));
     }
+
+    // --------------------------------------------------------------------
 
     function withdraw() external onlyOwner {
         (bool success, ) = payable(owner()).call{value: address(this).balance}(
             ""
         );
         require(success);
-    }
-
-    // --------------------------------------------------------------------
-    // GSN
-    // --------------------------------------------------------------------
-
-    function isTrustedForwarder(address forwarder)
-        public
-        view
-        override
-        returns (bool)
-    {
-        return ERC2771Recipient.isTrustedForwarder(forwarder);
-    }
-
-    function _msgSender()
-        internal
-        view
-        override(Context, ERC2771Recipient)
-        returns (address)
-    {
-        return ERC2771Recipient._msgSender();
-    }
-
-    function _msgData()
-        internal
-        view
-        virtual
-        override(Context, ERC2771Recipient)
-        returns (bytes calldata)
-    {
-        return ERC2771Recipient._msgData();
     }
 }

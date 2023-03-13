@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "contracts/common/IBreeding.sol";
 import "contracts/common/GenesUtil.sol";
 
-contract Breading is Ownable, IBreeding {
+contract Breeding is Ownable, IBreeding {
     // enum bodyPartIndex {
     //     Eyes  = 0,
     //     Mouth = 1,

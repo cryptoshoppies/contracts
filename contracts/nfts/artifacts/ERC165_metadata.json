@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.",
+			"kind": "dev",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/nfts/NFT.sol_flattened.sol": "ERC165"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/nfts/NFT.sol_flattened.sol": {
+			"keccak256": "0x625d917d1d6c9dd42001cdb3654df20683cf358fd3cb7c3ec8005c0235206a78",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3a7996a819dd0e7ec5f43f4437608a6f6b31cf51dc2c4b36461709d814a01a4",
+				"dweb:/ipfs/QmczJ6FyYhSHPHiS2wRpS5SZdxfE5jsVDLnG5EMwfq6PcX"
+			]
+		}
+	},
+	"version": 1
+}

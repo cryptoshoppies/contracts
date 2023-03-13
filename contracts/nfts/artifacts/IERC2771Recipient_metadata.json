@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "forwarder",
+						"type": "address"
+					}
+				],
+				"name": "isTrustedForwarder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isTrustedForwarder(address)": {
+					"params": {
+						"forwarder": "The address of the Forwarder contract that is being used."
+					},
+					"returns": {
+						"_0": "isTrustedForwarder `true` if the Forwarder is trusted to forward relayed transactions by this Recipient."
+					}
+				}
+			},
+			"title": "The ERC-2771 Recipient Base Abstract Class - Declarations",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"isTrustedForwarder(address)": {
+					"notice": ":warning: **Warning** :warning: The Forwarder can have a full control over your Recipient. Only trust verified Forwarder."
+				}
+			},
+			"notice": "A contract must implement this interface in order to support relayed transaction.It is recommended that your contract inherits from the ERC2771Recipient contract.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/nfts/NFT.sol_flattened.sol": "IERC2771Recipient"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/nfts/NFT.sol_flattened.sol": {
+			"keccak256": "0xc3b4de49455031a4516c6a66ac96c0851e2e8435441edbf782975c8e592a69f4",
+			"urls": [
+				"bzz-raw://da54f743b0ce8585edbd9d612ddb0bd7515993253801264f3cbdbee98dce1ca5",
+				"dweb:/ipfs/QmWEkzkkyNbvE5jnBismyN3C3PJFcAPgn3uEkwDmPBamVx"
+			]
+		}
+	},
+	"version": 1
+}
