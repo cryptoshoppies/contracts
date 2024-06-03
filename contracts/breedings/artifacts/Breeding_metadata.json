@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -311,13 +311,13 @@
 		"compilationTarget": {
 			"contracts/breedings/Breeding.sol": "Breeding"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -340,19 +340,19 @@
 			]
 		},
 		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0xc147186b9303c33e04a8f95432060a12f6ae5f673f0c9172293af12a868af3f8",
+			"keccak256": "0x3047f5a039ebfb5b732a1c4c57482f16571640a2f4d6788523e4dcc68a5356e0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4ee4a345919ea9e827ad7023845b6cd477b0e385663464db83496b3ed379d499",
-				"dweb:/ipfs/QmaeveNQw5294hnZFsJG6B1fJ84LPZRXz3GdB4v2tF6KEt"
+				"bzz-raw://029bb1241d13432ee6113938f6c4199531025fde61045d8d52eefcac4a115602",
+				"dweb:/ipfs/QmfDoTTwW5iifjZK5G2sRkZMQ599JwZ2DHgCZ7q49f5wRm"
 			]
 		},
 		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0x268a346782dcf223aadb23e1c23279d17ef469ff764dd2dd96fd90966daddd29",
+			"keccak256": "0xda9a2476405381ab3580bdd8071a88f5cd9be9a0f431dd457d131882f9f8c566",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://904ac8d3da96412011bdbb23646d06744d3cce546fd3f519a908ff041efc2289",
-				"dweb:/ipfs/QmZPtoh4fAVZtb9cFkwtc3Zs1QP8TzP9BQurQx8ZzFQh9H"
+				"bzz-raw://6cacd51959cdb9738706ca7c1fd0ef73f322ff23247b766f187409be45d891b1",
+				"dweb:/ipfs/QmQWXo9C4M2RrricuCjwmLenceyErd1TcM9bcvsjqabjjg"
 			]
 		},
 		"contracts/common/IBreeding.sol": {

@@ -30,6 +30,7 @@ contract Breeding is Ownable, IBreeding {
     uint256 private _maxId = 36;
 
     function breading(uint256 momIn, uint256 dadIn)
+        override 
         external
         returns (
             uint256 momOut,
@@ -53,7 +54,7 @@ contract Breeding is Ownable, IBreeding {
                 abi.encodePacked(
                     block.timestamp,
                     block.number,
-                    block.prevrandao,
+                    block.difficulty,
                     momIn,
                     dadIn,
                     _globalSeed

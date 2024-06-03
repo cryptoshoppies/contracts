@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.25+commit.b61c2a91"
 	},
 	"language": "Solidity",
 	"output": {
@@ -278,25 +278,25 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/coins/ShoCoin.sol_flattened.sol": "IERC20Metadata"
+			"contracts/coins/Coin.sol_flattened.sol": "IERC20Metadata"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/coins/ShoCoin.sol_flattened.sol": {
-			"keccak256": "0x0d0b0bcfc36ef118c03f7492ef1ce17bb63fa9fb013ef11f8023e033c914ac5b",
+		"contracts/coins/Coin.sol_flattened.sol": {
+			"keccak256": "0x97a03f4c6b6c8c6dcbd3011d9a82a525741649abdbce06f7a70395ded31b42a0",
 			"urls": [
-				"bzz-raw://febb9d33d1daa55c1ef84ad261d18c3e9f8ad718ca4af19ddad576696d4dcad2",
-				"dweb:/ipfs/QmZUUhRcSSHS9ujiUaxnSxhgxTChRFSWGep5y6CD24TMcL"
+				"bzz-raw://293bc91ed15a7fef7a977533b455746548ae4f9155c158db7f092184fcb97336",
+				"dweb:/ipfs/QmPdEYer5hz5gjzUPVVCq7xT4xbZeDSzzWZL8QpmdgvdXb"
 			]
 		}
 	},

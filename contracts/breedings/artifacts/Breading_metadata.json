@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.25+commit.b61c2a91"
 	},
 	"language": "Solidity",
 	"output": {
@@ -309,58 +309,25 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/breedings/Breeding.sol": "Breading"
+			"contracts/breedings/Breeding.sol_flattened.sol": "Breading"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
-			"license": "MIT",
+		"contracts/breedings/Breeding.sol_flattened.sol": {
+			"keccak256": "0xbc0c8c564612b8c59ddda84b496e1d2132c83d0bfc0818d86a67cc2ef6aad014",
 			"urls": [
-				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
-				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
-			]
-		},
-		"@openzeppelin/contracts/utils/Context.sol": {
-			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
-				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
-			]
-		},
-		"contracts/breedings/Breeding.sol": {
-			"keccak256": "0x18884780992bb7ff827ace86a8859013cdc22be902289fcaecbd9fb3a60c0daf",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ed09c47f7ac66443095d47533c4312fb6d97db87c66dc8604b918d27505a7e81",
-				"dweb:/ipfs/QmSG677gfq5ZmFodAE9Ddn6D9X44LssNGkjbnW5ZtQeZJM"
-			]
-		},
-		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0x374618d733e69d4fc8b13fb7feffb00bc4604d773b34fbdf7ca7ec9fc09d872a",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ac0d2d33ca84b4518d01bf8fe146716cb96e518e266f2b7d31677e862203e91c",
-				"dweb:/ipfs/Qmdvc2MBqwVgvLk5sR3yAURe4ovdL9cpuz1Q6rACWReGZv"
-			]
-		},
-		"contracts/common/IBreeding.sol": {
-			"keccak256": "0xa2f395ce931939f9e302e1036cd5dbce507481ae8e986fd2bf8bc3674bcca9f5",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://53b3114901a5094f4d08f1d2b6857b84efc22270767bf2e3134adefea54e5536",
-				"dweb:/ipfs/QmaEJFS2bP66po5bnJux1nSvzTAmkbNJKvkNxiJb84RTKH"
+				"bzz-raw://4d7b7f4447b16ee876c475b7365b734d514996a6c11e93cee99b0b065e0e2233",
+				"dweb:/ipfs/QmbvowFNuyWaMXamugMbiYxrZDALuQLM1LtxFsY3kLLkJ2"
 			]
 		}
 	},

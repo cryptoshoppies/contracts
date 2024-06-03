@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "momIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dadIn",
+						"type": "uint256"
+					}
+				],
+				"name": "breading",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "momOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dadOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "child",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"breading(uint256,uint256)": {
+					"details": "given genes of token 1 & 2, return a genetic combination - may have a random factor",
+					"params": {
+						"dadIn": "genes of dad",
+						"momIn": "genes of mom"
+					},
+					"returns": {
+						"child": "the genes that are supposed to be passed down the child",
+						"dadOut": "modify dad genes",
+						"momOut": "modify mom genes"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/breedings/Breeding.sol_flattened.sol": "IBreeding"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/breedings/Breeding.sol_flattened.sol": {
+			"keccak256": "0xbc0c8c564612b8c59ddda84b496e1d2132c83d0bfc0818d86a67cc2ef6aad014",
+			"urls": [
+				"bzz-raw://4d7b7f4447b16ee876c475b7365b734d514996a6c11e93cee99b0b065e0e2233",
+				"dweb:/ipfs/QmbvowFNuyWaMXamugMbiYxrZDALuQLM1LtxFsY3kLLkJ2"
+			]
+		}
+	},
+	"version": 1
+}

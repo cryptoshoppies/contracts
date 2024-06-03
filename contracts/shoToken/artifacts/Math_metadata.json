@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Standard math utilities missing in the Solidity language.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/shoToken/ShoToken_flattened.sol": "Math"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/shoToken/ShoToken_flattened.sol": {
+			"keccak256": "0xd44be28f25266e79eab12a28ec001a8d4f8b6cdac769286fe5014c91418d5d5e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fc2096d4d9bfa4f9feb22987661a7d5c471df7bca16a96266468d26f97773047",
+				"dweb:/ipfs/QmfTHRofTopFSAdost4o3VLX8KmL3Tz5uJv6kKVxF5hLaT"
+			]
+		}
+	},
+	"version": 1
+}

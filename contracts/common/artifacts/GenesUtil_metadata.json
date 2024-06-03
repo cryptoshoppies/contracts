@@ -1,256 +1,10 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.25+commit.b61c2a91"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "partId",
-						"type": "uint8"
-					}
-				],
-				"name": "getArcane",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					}
-				],
-				"name": "getCharges",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					}
-				],
-				"name": "getGeneration",
-				"outputs": [
-					{
-						"internalType": "uint32",
-						"name": "",
-						"type": "uint32"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "partId",
-						"type": "uint8"
-					}
-				],
-				"name": "getId",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "partId",
-						"type": "uint8"
-					}
-				],
-				"name": "getLevel",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "partId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "arcane",
-						"type": "uint8"
-					}
-				],
-				"name": "setArcane",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "charges",
-						"type": "uint8"
-					}
-				],
-				"name": "setCharges",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint32",
-						"name": "generation",
-						"type": "uint32"
-					}
-				],
-				"name": "setGeneration",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "partId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "id",
-						"type": "uint8"
-					}
-				],
-				"name": "setId",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "genes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "partId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint8",
-						"name": "level",
-						"type": "uint8"
-					}
-				],
-				"name": "setLevel",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			}
-		],
+		"abi": [],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -266,24 +20,24 @@
 		"compilationTarget": {
 			"contracts/common/GenesUtil.sol": "GenesUtil"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0x268a346782dcf223aadb23e1c23279d17ef469ff764dd2dd96fd90966daddd29",
+			"keccak256": "0xda9a2476405381ab3580bdd8071a88f5cd9be9a0f431dd457d131882f9f8c566",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://904ac8d3da96412011bdbb23646d06744d3cce546fd3f519a908ff041efc2289",
-				"dweb:/ipfs/QmZPtoh4fAVZtb9cFkwtc3Zs1QP8TzP9BQurQx8ZzFQh9H"
+				"bzz-raw://6cacd51959cdb9738706ca7c1fd0ef73f322ff23247b766f187409be45d891b1",
+				"dweb:/ipfs/QmQWXo9C4M2RrricuCjwmLenceyErd1TcM9bcvsjqabjjg"
 			]
 		}
 	},

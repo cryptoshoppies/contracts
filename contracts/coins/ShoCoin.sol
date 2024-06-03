@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "contracts/common/ICoin.sol";
 
 contract ShoCoin is ERC20, ERC20Burnable, Pausable, Ownable, ICoin {
-    constructor() ERC20("ShoCoin", "SHOC") {}
+    constructor() ERC20("TestShoCoin", "SHOC") {}
 
     function pause() public onlyOwner {
         _pause();

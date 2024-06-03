@@ -417,11 +417,11 @@
 	},
 	"sources": {
 		"contracts/nfts/NFT.sol_flattened.sol": {
-			"keccak256": "0x625d917d1d6c9dd42001cdb3654df20683cf358fd3cb7c3ec8005c0235206a78",
+			"keccak256": "0xe9b57ed8c6d25f1b17898aed0846e85f8eb6ab1f12077a01678215773ee4f023",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e3a7996a819dd0e7ec5f43f4437608a6f6b31cf51dc2c4b36461709d814a01a4",
-				"dweb:/ipfs/QmczJ6FyYhSHPHiS2wRpS5SZdxfE5jsVDLnG5EMwfq6PcX"
+				"bzz-raw://174d0f48bf434a5d86c3a10a4c66bd1ccfeae67b67e20feb420f905ff2ac4c36",
+				"dweb:/ipfs/QmVQ9mcEeGdiD6KR9ihT43jRmmW7TJ63mG9EERMT4VvBNx"
 			]
 		}
 	},
