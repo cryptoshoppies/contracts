@@ -1732,7 +1732,6 @@ abstract contract ERC721Burnable is Context, ERC721 {
 // File: contracts/shoToken/ShoToken.sol
 
 
-
 pragma solidity ^0.8.0;
 
 
