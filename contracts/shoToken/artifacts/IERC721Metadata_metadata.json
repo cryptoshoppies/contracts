@@ -417,11 +417,11 @@
 	},
 	"sources": {
 		"contracts/shoToken/ShoToken_flattened.sol": {
-			"keccak256": "0x01d1986a8c8b669fc8bd20daa38ee1eae27231c5124a4635499fc1c176e9cb82",
+			"keccak256": "0xd3d2c0403de61d8b757f86b325dd76e831b91b35607a08c7acb2df099511f727",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb32d2cb2f5f1eca51c0ea7ed2e76aa48bc5f7cfb7cedab7457bc2c7a1dc2bb7",
-				"dweb:/ipfs/QmcX1bJvVGRv1m943WEkx1JmxsHWfwjcmzCf4rCygizEXr"
+				"bzz-raw://bf1cbc6df8394e62db75e365b40bc0ca4aed6dad074f76c0c1bd0bffdba26b6d",
+				"dweb:/ipfs/QmT5qFuToKsQEsEMtaHTSve21HVfG5gzidz1a2nMJJZ3zD"
 			]
 		}
 	},
