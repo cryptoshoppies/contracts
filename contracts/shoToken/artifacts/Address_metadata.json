@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -21,7 +21,7 @@
 		"compilationTarget": {
 			"contracts/shoToken/ShoToken_flattened.sol": "Address"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -34,11 +34,11 @@
 	},
 	"sources": {
 		"contracts/shoToken/ShoToken_flattened.sol": {
-			"keccak256": "0x1774835041dfdd26bfd0fc5a714fee760daea1b8f404bf38c331dd0f1520d229",
+			"keccak256": "0x01d1986a8c8b669fc8bd20daa38ee1eae27231c5124a4635499fc1c176e9cb82",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://93b063d3cd21a607a71a5d072832cdc6d77a1bf4bc779503df885554b0ca17c2",
-				"dweb:/ipfs/QmQC3HXF2FypJeDfpeAaBJgms1BnFnoETYU7B5aRAFTpVK"
+				"bzz-raw://fb32d2cb2f5f1eca51c0ea7ed2e76aa48bc5f7cfb7cedab7457bc2c7a1dc2bb7",
+				"dweb:/ipfs/QmcX1bJvVGRv1m943WEkx1JmxsHWfwjcmzCf4rCygizEXr"
 			]
 		}
 	},

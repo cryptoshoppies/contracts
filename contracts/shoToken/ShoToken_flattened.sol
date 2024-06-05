@@ -1752,7 +1752,7 @@ contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
     // EVENTS
     // --------------------------------------------------------------------
 
-    event WasBorn(uint256 tokenId);
+    event Mint(uint256 tokenId);
 
     // --------------------------------------------------------------------
     // FIELDS
@@ -1798,7 +1798,7 @@ contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
 
         _safeMint(owner(), tokenId);
 
-        emit WasBorn(tokenId);
+        emit Mint(tokenId);
 
         return tokenId;
     }
