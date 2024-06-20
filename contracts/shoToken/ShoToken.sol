@@ -34,7 +34,7 @@ contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
 
     constructor() ERC721("ShoToken", "SHOTKN") {}
 
-    function _baseURI() internal pure override returns (string memory) {
+    function _baseURI() internal virtual pure override returns (string memory) {
         return "https://nft.cryptoshopee.ntiloyalty.com/";
     }
 
