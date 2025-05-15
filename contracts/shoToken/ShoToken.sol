@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 /// @custom:security-contact supportcs@ntiloyalty.com
-contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
+abstract contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
     // --------------------------------------------------------------------
     // USING
     // --------------------------------------------------------------------
@@ -35,7 +35,7 @@ contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
     constructor() ERC721("ShoToken", "SHOTKN") {}
 
     function _baseURI() internal virtual pure override returns (string memory) {
-        return "https://nft.cryptoshopee.ntiloyalty.com/";
+        return "https://nft.cryptoshopee.com/";
     }
 
     function pause() public onlyOwner {

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -112,7 +112,7 @@
 		"compilationTarget": {
 			"contracts/tests/TestGenes.sol": "TestGenes"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -125,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/common/GenesUtil.sol": {
-			"keccak256": "0x374618d733e69d4fc8b13fb7feffb00bc4604d773b34fbdf7ca7ec9fc09d872a",
+			"keccak256": "0xda9a2476405381ab3580bdd8071a88f5cd9be9a0f431dd457d131882f9f8c566",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ac0d2d33ca84b4518d01bf8fe146716cb96e518e266f2b7d31677e862203e91c",
-				"dweb:/ipfs/Qmdvc2MBqwVgvLk5sR3yAURe4ovdL9cpuz1Q6rACWReGZv"
+				"bzz-raw://6cacd51959cdb9738706ca7c1fd0ef73f322ff23247b766f187409be45d891b1",
+				"dweb:/ipfs/QmQWXo9C4M2RrricuCjwmLenceyErd1TcM9bcvsjqabjjg"
 			]
 		},
 		"contracts/tests/TestGenes.sol": {

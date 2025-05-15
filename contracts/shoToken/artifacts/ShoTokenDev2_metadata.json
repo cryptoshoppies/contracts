@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -590,9 +590,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/shoToken/ShoToken_dev2.sol": "ShoTokenDev2"
+			"contracts/shoToken/ShoToken_staging.sol": "ShoTokenDev2"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -717,19 +717,19 @@
 			]
 		},
 		"contracts/shoToken/ShoToken.sol": {
-			"keccak256": "0x1559c516721c16d7e66f9476b947ed5baf13c0c80c9ac643976237158d05d58c",
+			"keccak256": "0xeea243a52895f7793c4a09e9a44a973315034693e9115d7623caa894f8547fb5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://99b9068eebe19d50953c65dd74a985feffaba144ceb4b7775ee48dc751dba1cc",
-				"dweb:/ipfs/QmYk1a8BAvLRCrweAhCnFv9qLddnpk4GJ2eqeHJgBzjT46"
+				"bzz-raw://7d805f35c778dfdfc25479b025d80aa08a7fd3a5cff05ac549a4d1479a366a97",
+				"dweb:/ipfs/Qmcix67CKzW5pyF3y5698tAGiR1Kgg4t5dCWzS4z5iEWAi"
 			]
 		},
-		"contracts/shoToken/ShoToken_dev2.sol": {
-			"keccak256": "0xcb870e6b094e69c64d4e8cdfe4ece4751e59ea0cf5ef2b91c603bef614e70fe6",
+		"contracts/shoToken/ShoToken_staging.sol": {
+			"keccak256": "0x745ee64a68526b3ea0cc983fd7617cfa2f758a7f3d031d9fae2528e5b5f7dc72",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://291dd49cf972d05183d29b030b766bba0b896afd4aca900b87ba01f8b902bf16",
-				"dweb:/ipfs/QmbP2wGB8rJz7JhKwUcqV1e7LjRX14uHU6sgt7Z5e7u3cU"
+				"bzz-raw://1b7367181b107ffb8ce2290955f5cfcca17b8e54f04f4efb94af89cf7eb24afb",
+				"dweb:/ipfs/QmQYkaDe2uqTZct2mGXe6m11exQzB3AHbdryMVSLqwdqYk"
 			]
 		}
 	},
