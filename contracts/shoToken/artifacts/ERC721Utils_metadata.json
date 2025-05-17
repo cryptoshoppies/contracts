@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Library that provide common ERC-721 utility functions. See https://eips.ethereum.org/EIPS/eip-721[ERC-721]. _Available since v5.1._",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/shoToken/ShoToken_production_flattened.sol": "ERC721Utils"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/shoToken/ShoToken_production_flattened.sol": {
+			"keccak256": "0x8b5608e18aa07bd50914ebabfc8cb6d4f1f4a06ed836e8c55db2f41f7d2f5935",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ac5f0f741f59d47878d9377c304aa78f4c18c8038895005588ae23b79e0a3b48",
+				"dweb:/ipfs/QmVA5E2SVxCmrBsi5cFTTsmD9yjvid4YtgkRXKPWjQDbi2"
+			]
+		}
+	},
+	"version": 1
+}

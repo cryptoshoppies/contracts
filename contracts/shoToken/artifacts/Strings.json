@@ -34,18 +34,18 @@
 			"functionDebugData": {},
 			"generatedSources": [],
 			"linkReferences": {},
-			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea2646970667358221220661a343ba7adcdf168ca74713c5df52a12aa54333bdedd0677da83aa6d287c4864736f6c634300081e0033",
-			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH7 0x1A343BA7ADCDF1 PUSH9 0xCA74713C5DF52A12AA SLOAD CALLER EXTCODESIZE 0xDE 0xDD MOD PUSH24 0xDA83AA6D287C4864736F6C634300081E0033000000000000 ",
-			"sourceMap": "30445:2065:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220d9d6f2ad3fc4ce782c425977213f45cd6abb7074ae6dbd9c7ac08f169b82c30a64736f6c63430008180033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xD9 0xD6 CALLCODE 0xAD EXTCODEHASH 0xC4 0xCE PUSH25 0x2C425977213F45CD6ABB7074AE6DBD9C7AC08F169B82C30A64 PUSH20 0x6F6C634300081800330000000000000000000000 ",
+			"sourceMap": "88903:18980:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 		},
 		"deployedBytecode": {
 			"functionDebugData": {},
 			"generatedSources": [],
 			"immutableReferences": {},
 			"linkReferences": {},
-			"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea2646970667358221220661a343ba7adcdf168ca74713c5df52a12aa54333bdedd0677da83aa6d287c4864736f6c634300081e0033",
-			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH7 0x1A343BA7ADCDF1 PUSH9 0xCA74713C5DF52A12AA SLOAD CALLER EXTCODESIZE 0xDE 0xDD MOD PUSH24 0xDA83AA6D287C4864736F6C634300081E0033000000000000 ",
-			"sourceMap": "30445:2065:0:-:0;;;;;;;;"
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220d9d6f2ad3fc4ce782c425977213f45cd6abb7074ae6dbd9c7ac08f169b82c30a64736f6c63430008180033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xD9 0xD6 CALLCODE 0xAD EXTCODEHASH 0xC4 0xCE PUSH25 0x2C425977213F45CD6ABB7074AE6DBD9C7AC08F169B82C30A64 PUSH20 0x6F6C634300081800330000000000000000000000 ",
+			"sourceMap": "88903:18980:0:-:0;;;;;;;;"
 		},
 		"gasEstimates": {
 			"creation": {
@@ -54,13 +54,65 @@
 				"totalCost": "17092"
 			},
 			"internal": {
+				"_tryParseChr(bytes1)": "infinite",
+				"_tryParseHexUintUncheckedBounds(string memory,uint256,uint256)": "infinite",
+				"_tryParseIntUncheckedBounds(string memory,uint256,uint256)": "infinite",
+				"_tryParseUintUncheckedBounds(string memory,uint256,uint256)": "infinite",
+				"_unsafeReadBytesOffset(bytes memory,uint256)": "infinite",
+				"equal(string memory,string memory)": "infinite",
+				"escapeJSON(string memory)": "infinite",
+				"parseAddress(string memory)": "infinite",
+				"parseAddress(string memory,uint256,uint256)": "infinite",
+				"parseHexUint(string memory)": "infinite",
+				"parseHexUint(string memory,uint256,uint256)": "infinite",
+				"parseInt(string memory)": "infinite",
+				"parseInt(string memory,uint256,uint256)": "infinite",
+				"parseUint(string memory)": "infinite",
+				"parseUint(string memory,uint256,uint256)": "infinite",
+				"toChecksumHexString(address)": "infinite",
 				"toHexString(address)": "infinite",
 				"toHexString(uint256)": "infinite",
 				"toHexString(uint256,uint256)": "infinite",
-				"toString(uint256)": "infinite"
+				"toString(uint256)": "infinite",
+				"toStringSigned(int256)": "infinite",
+				"tryParseAddress(string memory)": "infinite",
+				"tryParseAddress(string memory,uint256,uint256)": "infinite",
+				"tryParseHexUint(string memory)": "infinite",
+				"tryParseHexUint(string memory,uint256,uint256)": "infinite",
+				"tryParseInt(string memory)": "infinite",
+				"tryParseInt(string memory,uint256,uint256)": "infinite",
+				"tryParseUint(string memory)": "infinite",
+				"tryParseUint(string memory,uint256,uint256)": "infinite"
 			}
 		},
 		"methodIdentifiers": {}
 	},
-	"abi": []
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "length",
+					"type": "uint256"
+				}
+			],
+			"name": "StringsInsufficientHexLength",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "StringsInvalidAddressFormat",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "StringsInvalidChar",
+			"type": "error"
+		}
+	]
 }

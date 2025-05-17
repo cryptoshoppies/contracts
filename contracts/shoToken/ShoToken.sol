@@ -1,19 +1,17 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// Compatible with OpenZeppelin Contracts ^5.0.0
+pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-/// @custom:security-contact supportcs@ntiloyalty.com
-abstract contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
+/// @custom:security-contact support@ntiloyalty.com
+abstract contract ShoToken is ERC721, Ownable {
     // --------------------------------------------------------------------
     // USING
     // --------------------------------------------------------------------
 
-    using Strings for uint256;
     using Counters for Counters.Counter;
 
     // --------------------------------------------------------------------
@@ -32,27 +30,14 @@ abstract contract ShoToken is ERC721, Pausable, Ownable, ERC721Burnable {
     // CONSTRUCTOR
     // --------------------------------------------------------------------
 
-    constructor() ERC721("ShoToken", "SHOTKN") {}
+    constructor() ERC721("ShoToken", "SHOTKN") Ownable(_msgSender()) {}
 
-    function _baseURI() internal virtual pure override returns (string memory) {
+    // --------------------------------------------------------------------
+    // OVERRIDES
+    // --------------------------------------------------------------------
+
+    function _baseURI() internal pure virtual override returns (string memory) {
         return "https://nft.cryptoshopee.com/";
-    }
-
-    function pause() public onlyOwner {
-        _pause();
-    }
-
-    function unpause() public onlyOwner {
-        _unpause();
-    }
-
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId,
-        uint256 batchSize
-    ) internal override whenNotPaused {
-        super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
     // --------------------------------------------------------------------

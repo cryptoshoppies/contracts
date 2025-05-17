@@ -34,18 +34,18 @@
 			"functionDebugData": {},
 			"generatedSources": [],
 			"linkReferences": {},
-			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212204c57834e1717f88c8e08e468e61712dbde8d44cac15380dc2f9ce1279fa444da64736f6c634300081e0033",
-			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x4C JUMPI DUP4 0x4E OR OR EXTCALL DUP13 DUP15 ADDMOD RETF PUSH9 0xE61712DBDE8D44CAC1 MSTORE8 DUP1 0xDC 0x2F SWAP13 RJUMPI 0x279F LOG4 PREVRANDAO 0xDA PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
-			"sourceMap": "17958:12302:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212205a243aebd22165f570476c3115744fe5d79fc25b6dec8a090aee5e47be37392564736f6c63430008180033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 GAS 0x24 GASPRICE 0xEB 0xD2 0x21 PUSH6 0xF570476C3115 PUSH21 0x4FE5D79FC25B6DEC8A090AEE5E47BE37392564736F PUSH13 0x63430008180033000000000000 ",
+			"sourceMap": "54250:31863:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 		},
 		"deployedBytecode": {
 			"functionDebugData": {},
 			"generatedSources": [],
 			"immutableReferences": {},
 			"linkReferences": {},
-			"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212204c57834e1717f88c8e08e468e61712dbde8d44cac15380dc2f9ce1279fa444da64736f6c634300081e0033",
-			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x4C JUMPI DUP4 0x4E OR OR EXTCALL DUP13 DUP15 ADDMOD RETF PUSH9 0xE61712DBDE8D44CAC1 MSTORE8 DUP1 0xDC 0x2F SWAP13 RJUMPI 0x279F LOG4 PREVRANDAO 0xDA PUSH5 0x736F6C6343 STOP ADDMOD 0x1E STOP CALLER ",
-			"sourceMap": "17958:12302:0:-:0;;;;;;;;"
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212205a243aebd22165f570476c3115744fe5d79fc25b6dec8a090aee5e47be37392564736f6c63430008180033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 GAS 0x24 GASPRICE 0xEB 0xD2 0x21 PUSH6 0xF570476C3115 PUSH21 0x4FE5D79FC25B6DEC8A090AEE5E47BE37392564736F PUSH13 0x63430008180033000000000000 ",
+			"sourceMap": "54250:31863:0:-:0;;;;;;;;"
 		},
 		"gasEstimates": {
 			"creation": {
@@ -54,8 +54,12 @@
 				"totalCost": "17092"
 			},
 			"internal": {
+				"_zeroBytes(bytes memory)": "infinite",
+				"add512(uint256,uint256)": "infinite",
 				"average(uint256,uint256)": "infinite",
 				"ceilDiv(uint256,uint256)": "infinite",
+				"invMod(uint256,uint256)": "infinite",
+				"invModPrime(uint256,uint256)": "infinite",
 				"log10(uint256)": "infinite",
 				"log10(uint256,enum Math.Rounding)": "infinite",
 				"log2(uint256)": "infinite",
@@ -64,10 +68,27 @@
 				"log256(uint256,enum Math.Rounding)": "infinite",
 				"max(uint256,uint256)": "infinite",
 				"min(uint256,uint256)": "infinite",
+				"modExp(bytes memory,bytes memory,bytes memory)": "infinite",
+				"modExp(uint256,uint256,uint256)": "infinite",
+				"mul512(uint256,uint256)": "infinite",
 				"mulDiv(uint256,uint256,uint256)": "infinite",
 				"mulDiv(uint256,uint256,uint256,enum Math.Rounding)": "infinite",
+				"mulShr(uint256,uint256,uint8)": "infinite",
+				"mulShr(uint256,uint256,uint8,enum Math.Rounding)": "infinite",
+				"saturatingAdd(uint256,uint256)": "infinite",
+				"saturatingMul(uint256,uint256)": "infinite",
+				"saturatingSub(uint256,uint256)": "infinite",
 				"sqrt(uint256)": "infinite",
-				"sqrt(uint256,enum Math.Rounding)": "infinite"
+				"sqrt(uint256,enum Math.Rounding)": "infinite",
+				"ternary(bool,uint256,uint256)": "infinite",
+				"tryAdd(uint256,uint256)": "infinite",
+				"tryDiv(uint256,uint256)": "infinite",
+				"tryMod(uint256,uint256)": "infinite",
+				"tryModExp(bytes memory,bytes memory,bytes memory)": "infinite",
+				"tryModExp(uint256,uint256,uint256)": "infinite",
+				"tryMul(uint256,uint256)": "infinite",
+				"trySub(uint256,uint256)": "infinite",
+				"unsignedRoundsUp(enum Math.Rounding)": "infinite"
 			}
 		},
 		"methodIdentifiers": {}

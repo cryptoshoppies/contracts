@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -41,14 +41,14 @@
 			}
 		],
 		"devdoc": {
-			"details": "Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.",
+			"details": "Interface for any contract that wants to support safeTransfers from ERC-721 asset contracts.",
 			"kind": "dev",
 			"methods": {
 				"onERC721Received(address,address,uint256,bytes)": {
 					"details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721Receiver.onERC721Received.selector`."
 				}
 			},
-			"title": "ERC721 token receiver interface",
+			"title": "ERC-721 token receiver interface",
 			"version": 1
 		},
 		"userdoc": {
@@ -59,9 +59,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/shoToken/ShoToken_develop_flattened.sol": "IERC721Receiver"
+			"contracts/shoToken/ShoToken_production_flattened.sol": "IERC721Receiver"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -73,12 +73,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/shoToken/ShoToken_develop_flattened.sol": {
-			"keccak256": "0xd528df93acb18efeed03c18377a7160cdc525a7bf07b9b5c167a11a69f4197d9",
+		"contracts/shoToken/ShoToken_production_flattened.sol": {
+			"keccak256": "0x8b5608e18aa07bd50914ebabfc8cb6d4f1f4a06ed836e8c55db2f41f7d2f5935",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f8be674791d69dc9a98f393ab7d99fc5b1095be32ed1bc6ee17e4fd1ccb7c3ec",
-				"dweb:/ipfs/QmP6DG8hSCjVR5wnhqniTKLepU16NcbG143KheUXoYrtrR"
+				"bzz-raw://ac5f0f741f59d47878d9377c304aa78f4c18c8038895005588ae23b79e0a3b48",
+				"dweb:/ipfs/QmVA5E2SVxCmrBsi5cFTTsmD9yjvid4YtgkRXKPWjQDbi2"
 			]
 		}
 	},

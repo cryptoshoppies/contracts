@@ -1,12 +1,56 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "StringsInsufficientHexLength",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "StringsInvalidAddressFormat",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "StringsInvalidChar",
+				"type": "error"
+			}
+		],
 		"devdoc": {
 			"details": "String operations.",
+			"errors": {
+				"StringsInsufficientHexLength(uint256,uint256)": [
+					{
+						"details": "The `value` string doesn't fit in the specified `length`."
+					}
+				],
+				"StringsInvalidAddressFormat()": [
+					{
+						"details": "The string being parsed is not a properly formatted address."
+					}
+				],
+				"StringsInvalidChar()": [
+					{
+						"details": "The string being parsed contains characters that are not in scope of the given base."
+					}
+				]
+			},
 			"kind": "dev",
 			"methods": {},
 			"version": 1
@@ -19,9 +63,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/shoToken/ShoToken_develop_flattened.sol": "Strings"
+			"contracts/shoToken/ShoToken_production_flattened.sol": "Strings"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -33,12 +77,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/shoToken/ShoToken_develop_flattened.sol": {
-			"keccak256": "0xd528df93acb18efeed03c18377a7160cdc525a7bf07b9b5c167a11a69f4197d9",
+		"contracts/shoToken/ShoToken_production_flattened.sol": {
+			"keccak256": "0x8b5608e18aa07bd50914ebabfc8cb6d4f1f4a06ed836e8c55db2f41f7d2f5935",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f8be674791d69dc9a98f393ab7d99fc5b1095be32ed1bc6ee17e4fd1ccb7c3ec",
-				"dweb:/ipfs/QmP6DG8hSCjVR5wnhqniTKLepU16NcbG143KheUXoYrtrR"
+				"bzz-raw://ac5f0f741f59d47878d9377c304aa78f4c18c8038895005588ae23b79e0a3b48",
+				"dweb:/ipfs/QmVA5E2SVxCmrBsi5cFTTsmD9yjvid4YtgkRXKPWjQDbi2"
 			]
 		}
 	},
